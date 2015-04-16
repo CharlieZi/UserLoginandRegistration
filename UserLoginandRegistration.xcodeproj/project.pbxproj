@@ -14,6 +14,7 @@
 		CBDC54D81AE002A700DEC5CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBDC54D71AE002A700DEC5CF /* Images.xcassets */; };
 		CBDC54DB1AE002A700DEC5CF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDC54D91AE002A700DEC5CF /* LaunchScreen.xib */; };
 		CBDC54E71AE002A700DEC5CF /* UserLoginandRegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54E61AE002A700DEC5CF /* UserLoginandRegistrationTests.swift */; };
+		CBDC54F11AE0130100DEC5CF /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		CBDC54E01AE002A700DEC5CF /* UserLoginandRegistrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserLoginandRegistrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDC54E51AE002A700DEC5CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBDC54E61AE002A700DEC5CF /* UserLoginandRegistrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginandRegistrationTests.swift; sourceTree = "<group>"; };
+		CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				CBDC54D91AE002A700DEC5CF /* LaunchScreen.xib */,
 				CBDC54CF1AE002A700DEC5CF /* UserLoginandRegistration.xcdatamodeld */,
 				CBDC54CB1AE002A700DEC5CF /* Supporting Files */,
+				CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */,
 			);
 			path = UserLoginandRegistration;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBDC54F11AE0130100DEC5CF /* RegisterPageViewController.swift in Sources */,
 				CBDC54D31AE002A700DEC5CF /* ViewController.swift in Sources */,
 				CBDC54CE1AE002A700DEC5CF /* AppDelegate.swift in Sources */,
 				CBDC54D11AE002A700DEC5CF /* UserLoginandRegistration.xcdatamodeld in Sources */,
@@ -415,6 +419,7 @@
 				CBDC54EC1AE002A700DEC5CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBDC54ED1AE002A700DEC5CF /* Build configuration list for PBXNativeTarget "UserLoginandRegistrationTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				CBDC54EF1AE002A700DEC5CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

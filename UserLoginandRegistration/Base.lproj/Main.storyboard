@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="1025" y="283"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Page View Controller-->
         <scene sceneID="PUd-KY-EKB">
             <objects>
-                <viewController id="lV5-02-IlX" sceneMemberID="viewController">
+                <viewController id="lV5-02-IlX" customClass="RegisterPageViewController" customModule="UserLoginandRegistration" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x40-mZ-OLq"/>
                         <viewControllerLayoutGuide type="bottom" id="kaq-Zo-ORy"/>
@@ -152,6 +152,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerBtnClicked:" destination="lV5-02-IlX" eventType="touchUpInside" id="Kz4-IG-bii"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Registration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckg-ju-bTV">
                                 <rect key="frame" x="114" y="75" width="93" height="21"/>
@@ -180,6 +183,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="userEmailTextField" destination="XlE-Bc-jYL" id="0PC-lu-5uL"/>
+                        <outlet property="userPasswordTextField" destination="cCF-6A-MCp" id="cTr-ij-8lJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSc-FI-gM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
