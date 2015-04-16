@@ -35,6 +35,8 @@ class RegisterPageViewController: UIViewController {
         let usrEmail = userEmailTextField.text
         let usrPword = userPasswordTextField.text
         
+        
+        
         // Check empty field
         
         if (usrEmail.isEmpty || usrPword.isEmpty){
@@ -46,8 +48,24 @@ class RegisterPageViewController: UIViewController {
         
         // Store Data
         
+        NSUserDefaults.standardUserDefaults().setObject(usrEmail, forKey: "usrEmail")
+        NSUserDefaults.standardUserDefaults().setObject(usrPword, forKey: "usrPword")
+        NSUserDefaults.standardUserDefaults().synchronize()
+
+
+
         // display alert message with confirmation
         
+        var myRegAlert = UIAlertController(title: "Thanks", message: "Registration is complete!", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let okRegAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){ action in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        myRegAlert.addAction(okRegAction)
+        
+        self.presentViewController(myRegAlert, animated: true, completion: nil)
+
     
         
         

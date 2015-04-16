@@ -15,6 +15,7 @@
 		CBDC54DB1AE002A700DEC5CF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDC54D91AE002A700DEC5CF /* LaunchScreen.xib */; };
 		CBDC54E71AE002A700DEC5CF /* UserLoginandRegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54E61AE002A700DEC5CF /* UserLoginandRegistrationTests.swift */; };
 		CBDC54F11AE0130100DEC5CF /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */; };
+		CBDC54F31AE0277E00DEC5CF /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54F21AE0277E00DEC5CF /* LoginPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		CBDC54E51AE002A700DEC5CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBDC54E61AE002A700DEC5CF /* UserLoginandRegistrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginandRegistrationTests.swift; sourceTree = "<group>"; };
 		CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
+		CBDC54F21AE0277E00DEC5CF /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				CBDC54CF1AE002A700DEC5CF /* UserLoginandRegistration.xcdatamodeld */,
 				CBDC54CB1AE002A700DEC5CF /* Supporting Files */,
 				CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */,
+				CBDC54F21AE0277E00DEC5CF /* LoginPageViewController.swift */,
 			);
 			path = UserLoginandRegistration;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				CBDC54F11AE0130100DEC5CF /* RegisterPageViewController.swift in Sources */,
 				CBDC54D31AE002A700DEC5CF /* ViewController.swift in Sources */,
 				CBDC54CE1AE002A700DEC5CF /* AppDelegate.swift in Sources */,
+				CBDC54F31AE0277E00DEC5CF /* LoginPageViewController.swift in Sources */,
 				CBDC54D11AE002A700DEC5CF /* UserLoginandRegistration.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
