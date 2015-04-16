@@ -44,10 +44,16 @@ class LoginPageViewController: UIViewController {
                 NSUserDefaults.standardUserDefaults().synchronize()
                 
                 self.dismissViewControllerAnimated(true, completion: nil)
-
-                
-                
             }
+        }else{
+            var myRegAlert = UIAlertController(title: "Alert", message: " Invalid Email or Password", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let okRegAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            
+            myRegAlert.addAction(okRegAction)
+            
+            self.presentViewController(myRegAlert, animated: true, completion: nil)
+            
         }
         
 

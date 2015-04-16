@@ -16,6 +16,7 @@
 		CBDC54E71AE002A700DEC5CF /* UserLoginandRegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54E61AE002A700DEC5CF /* UserLoginandRegistrationTests.swift */; };
 		CBDC54F11AE0130100DEC5CF /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */; };
 		CBDC54F31AE0277E00DEC5CF /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54F21AE0277E00DEC5CF /* LoginPageViewController.swift */; };
+		CBDC54F61AE034EA00DEC5CF /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBDC54F51AE034EA00DEC5CF /* cat.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		CBDC54E61AE002A700DEC5CF /* UserLoginandRegistrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginandRegistrationTests.swift; sourceTree = "<group>"; };
 		CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		CBDC54F21AE0277E00DEC5CF /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		CBDC54F51AE034EA00DEC5CF /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		CBDC54CB1AE002A700DEC5CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CBDC54F41AE034B600DEC5CF /* Resource */,
 				CBDC54CC1AE002A700DEC5CF /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -119,6 +122,14 @@
 				CBDC54E51AE002A700DEC5CF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CBDC54F41AE034B600DEC5CF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CBDC54F51AE034EA00DEC5CF /* cat.jpg */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBDC54D61AE002A700DEC5CF /* Main.storyboard in Resources */,
+				CBDC54F61AE034EA00DEC5CF /* cat.jpg in Resources */,
 				CBDC54DB1AE002A700DEC5CF /* LaunchScreen.xib in Resources */,
 				CBDC54D81AE002A700DEC5CF /* Images.xcassets in Resources */,
 			);
