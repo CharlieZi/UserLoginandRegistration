@@ -13,6 +13,8 @@ class UserCenterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,8 +24,6 @@ class UserCenterViewController: UIViewController {
     
     
     override func viewDidAppear(animated: Bool) {
-        
-//        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isuserLoggedIn")
         
         if(BmobUser.getCurrentUser()==nil){
               self.performSegueWithIdentifier("loginView", sender: self)

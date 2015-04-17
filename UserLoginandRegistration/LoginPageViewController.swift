@@ -42,6 +42,7 @@ class LoginPageViewController: UIViewController {
 
                     self.dismissViewControllerAnimated(true, completion: nil)
                     
+                    
                 }
             } else {
                 var myRegAlert = UIAlertController(title: "Alert", message: " Invalid Email or Password", preferredStyle: UIAlertControllerStyle.Alert)
