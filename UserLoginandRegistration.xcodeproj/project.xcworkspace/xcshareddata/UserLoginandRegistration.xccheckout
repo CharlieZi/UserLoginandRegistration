@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A9A9BA93-0392-4E2A-BBFA-ECE0B9BAC4E5</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>UserLoginandRegistration</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CE1EAB40C5B450611C63CC52A65B58F1F3AF8FA1</key>
 		<string>https://github.com/CharlieZi/UserLoginandRegistration.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>UserLoginandRegistration.xcodeproj/project.xcworkspace</string>
+	<string>UserLoginandRegistration.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CE1EAB40C5B450611C63CC52A65B58F1F3AF8FA1</key>

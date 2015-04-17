@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CBDC54CE1AE002A700DEC5CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54CD1AE002A700DEC5CF /* AppDelegate.swift */; };
 		CBDC54D11AE002A700DEC5CF /* UserLoginandRegistration.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54CF1AE002A700DEC5CF /* UserLoginandRegistration.xcdatamodeld */; };
-		CBDC54D31AE002A700DEC5CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54D21AE002A700DEC5CF /* ViewController.swift */; };
+		CBDC54D31AE002A700DEC5CF /* UserCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54D21AE002A700DEC5CF /* UserCenterViewController.swift */; };
 		CBDC54D61AE002A700DEC5CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBDC54D41AE002A700DEC5CF /* Main.storyboard */; };
 		CBDC54D81AE002A700DEC5CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBDC54D71AE002A700DEC5CF /* Images.xcassets */; };
 		CBDC54DB1AE002A700DEC5CF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDC54D91AE002A700DEC5CF /* LaunchScreen.xib */; };
@@ -41,7 +41,7 @@
 		CBDC54CC1AE002A700DEC5CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBDC54CD1AE002A700DEC5CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBDC54D01AE002A700DEC5CF /* UserLoginandRegistration.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserLoginandRegistration.xcdatamodel; sourceTree = "<group>"; };
-		CBDC54D21AE002A700DEC5CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CBDC54D21AE002A700DEC5CF /* UserCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCenterViewController.swift; sourceTree = "<group>"; };
 		CBDC54D51AE002A700DEC5CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBDC54D71AE002A700DEC5CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CBDC54DA1AE002A700DEC5CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,6 +85,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB53C6FE1AE12443006BDC9E /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */,
+				CBDC54F21AE0277E00DEC5CF /* LoginPageViewController.swift */,
+				CBDC54D21AE002A700DEC5CF /* UserCenterViewController.swift */,
+			);
+			name = UserCenter;
+			sourceTree = "<group>";
+		};
+		CB53C6FF1AE12455006BDC9E /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				CB53C6FE1AE12443006BDC9E /* UserCenter */,
+			);
+			name = Assembly;
+			sourceTree = "<group>";
+		};
 		CBDC54BF1AE002A700DEC5CF = {
 			isa = PBXGroup;
 			children = (
@@ -106,16 +124,13 @@
 		CBDC54CA1AE002A700DEC5CF /* UserLoginandRegistration */ = {
 			isa = PBXGroup;
 			children = (
-				CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */,
-				CBDC54F21AE0277E00DEC5CF /* LoginPageViewController.swift */,
+				CB53C6FF1AE12455006BDC9E /* Assembly */,
 				CBDC54CD1AE002A700DEC5CF /* AppDelegate.swift */,
-				CBDC54D21AE002A700DEC5CF /* ViewController.swift */,
 				CBDC54D41AE002A700DEC5CF /* Main.storyboard */,
 				CBDC54D71AE002A700DEC5CF /* Images.xcassets */,
 				CBDC54D91AE002A700DEC5CF /* LaunchScreen.xib */,
 				CBDC54CF1AE002A700DEC5CF /* UserLoginandRegistration.xcdatamodeld */,
 				CBDC54CB1AE002A700DEC5CF /* Supporting Files */,
-				CBEBC39E1AE0FC0E00158214 /* Regex.swift */,
 			);
 			path = UserLoginandRegistration;
 			sourceTree = "<group>";
@@ -123,6 +138,7 @@
 		CBDC54CB1AE002A700DEC5CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CBEBC39E1AE0FC0E00158214 /* Regex.swift */,
 				CBEBC34D1AE0575500158214 /* BmobSDK.framework */,
 				CBEBC3551AE057CA00158214 /* CoreFoundation.framework */,
 				CBEBC3561AE057CA00158214 /* Foundation.framework */,
@@ -263,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBDC54F11AE0130100DEC5CF /* RegisterPageViewController.swift in Sources */,
-				CBDC54D31AE002A700DEC5CF /* ViewController.swift in Sources */,
+				CBDC54D31AE002A700DEC5CF /* UserCenterViewController.swift in Sources */,
 				CBDC54CE1AE002A700DEC5CF /* AppDelegate.swift in Sources */,
 				CBDC54F31AE0277E00DEC5CF /* LoginPageViewController.swift in Sources */,
 				CBDC54D11AE002A700DEC5CF /* UserLoginandRegistration.xcdatamodeld in Sources */,
