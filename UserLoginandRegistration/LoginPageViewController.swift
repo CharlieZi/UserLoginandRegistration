@@ -30,41 +30,32 @@ class LoginPageViewController: UIViewController {
         let usrEmail = userEmailTextFiled.text
         let usrPword = userPasswordTextField.text
         
-        let usrEmailStored = NSUserDefaults.standardUserDefaults().stringForKey("usrEmail")
-        let usrPwordStored = NSUserDefaults.standardUserDefaults().stringForKey("usrPword")
+        
+        // check userData
+ 
         
         
-        
-        
-        if(usrEmail == usrEmailStored){
-            if(usrPword == usrPwordStored){
-                //LoginSuccesful
-                
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isuserLoggedIn")
-                NSUserDefaults.standardUserDefaults().synchronize()
-                
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-        }else{
-            var myRegAlert = UIAlertController(title: "Alert", message: " Invalid Email or Password", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            let okRegAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-            
-            myRegAlert.addAction(okRegAction)
-            
-            self.presentViewController(myRegAlert, animated: true, completion: nil)
-            
-        }
-        
+        BmobUser.loginWithUsernameInBackground(usrEmail, password:usrPword){
+            (user: BmobUser!, error: NSError!) -> Void in
+            if user != nil {
+                dispatch_async(dispatch_get_main_queue()) {
 
-        
-        
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                    
+                }
+            } else {
+                var myRegAlert = UIAlertController(title: "Alert", message: " Invalid Email or Password", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let okRegAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                
+                myRegAlert.addAction(okRegAction)
+                
+                self.presentViewController(myRegAlert, animated: true, completion: nil)
+            }
+        }
     }
 
-
-    
-    
-    
+        
     
     
 
