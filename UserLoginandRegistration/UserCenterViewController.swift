@@ -9,10 +9,16 @@
 import UIKit
 
 class UserCenterViewController: UIViewController {
+    
 
+    @IBOutlet weak var SlideMenuBtn: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        SlideMenuBtn.target = self.revealViewController()
+        SlideMenuBtn.action = Selector("revealToggle:")
+        
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 
     }

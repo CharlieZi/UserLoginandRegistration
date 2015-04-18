@@ -15,7 +15,7 @@ class backTableVC: UITableViewController {
     var TableArray = [String]()
     
     override func viewDidLoad() {
-        TableArray = ["Hello","World","Again"]
+        TableArray = ["My Account","News","Watch List","Contact Us","QR Code"]
     }
     
     

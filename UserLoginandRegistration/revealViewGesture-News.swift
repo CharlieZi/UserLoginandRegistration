@@ -9,11 +9,14 @@
 import Foundation
 
 
-class revealViewGesture: UIViewController {
+class revealViewGesture_News: UIViewController {
+    
+    @IBOutlet weak var SlideMenuBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        SlideMenuBtn.target = self.revealViewController()
+        SlideMenuBtn.action = Selector("revealToggle:")
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
     }

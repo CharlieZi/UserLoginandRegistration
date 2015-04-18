@@ -7,14 +7,16 @@
 //
 
 import Foundation
-import UIKit
 
 
-class mainStoryBoard: UIViewController {
+class revealViewGesture_ContactUs: UIViewController {
+    
+    @IBOutlet weak var SlideMenuBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        SlideMenuBtn.target = self.revealViewController()
+        SlideMenuBtn.action = Selector("revealToggle:")
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
     }
@@ -24,13 +26,5 @@ class mainStoryBoard: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    
 
-
-    
-    
 }
-
