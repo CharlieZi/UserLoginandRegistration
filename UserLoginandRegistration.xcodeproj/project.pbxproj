@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB23623F1AE5EE5B004CB54C /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB23623E1AE5EE5B004CB54C /* TimelineTableViewController.swift */; };
+		CB2362431AE5F206004CB54C /* revealViewGesture-News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2362421AE5F206004CB54C /* revealViewGesture-News.swift */; };
+		CB2362451AE5F66B004CB54C /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2362441AE5F66B004CB54C /* AboutUsViewController.swift */; };
+		CB23B2F61AE5F8980055DC15 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB23B2F51AE5F8980055DC15 /* TimelineTableViewCell.swift */; };
 		CB27185E1AE2100700EB475F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2718541AE2100700EB475F /* QRViewController.swift */; };
 		CB27185F1AE2100700EB475F /* pick_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2718551AE2100700EB475F /* pick_bg@2x.png */; };
 		CB2718601AE2100700EB475F /* ocrBack.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2718561AE2100700EB475F /* ocrBack.png */; };
@@ -19,6 +23,7 @@
 		CB2718671AE2100700EB475F /* ocr_flash-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB27185D1AE2100700EB475F /* ocr_flash-on@2x.png */; };
 		CB53C7031AE125E6006BDC9E /* backTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB53C7011AE125E6006BDC9E /* backTableVC.swift */; };
 		CB53C7071AE12600006BDC9E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB53C7061AE12600006BDC9E /* SWRevealViewController.m */; };
+		CB6368301AE5605F00CA5856 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */; };
 		CBDC54CE1AE002A700DEC5CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54CD1AE002A700DEC5CF /* AppDelegate.swift */; };
 		CBDC54D31AE002A700DEC5CF /* UserCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54D21AE002A700DEC5CF /* UserCenterViewController.swift */; };
 		CBDC54D61AE002A700DEC5CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBDC54D41AE002A700DEC5CF /* Main.storyboard */; };
@@ -37,9 +42,6 @@
 		CBEBC39F1AE0FC0E00158214 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEBC39E1AE0FC0E00158214 /* Regex.swift */; };
 		CBFB0D181AE19A000004CB14 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CBFB0D161AE19A000004CB14 /* reveal-icon.png */; };
 		CBFB0D191AE19A000004CB14 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBFB0D171AE19A000004CB14 /* reveal-icon@2x.png */; };
-		CBFB0D1D1AE1A02C0004CB14 /* revealViewGesture-ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB0D1A1AE1A02C0004CB14 /* revealViewGesture-ContactUs.swift */; };
-		CBFB0D1E1AE1A02C0004CB14 /* revealViewGesture-News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB0D1B1AE1A02C0004CB14 /* revealViewGesture-News.swift */; };
-		CBFB0D1F1AE1A02C0004CB14 /* revealViewGesture-WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB0D1C1AE1A02C0004CB14 /* revealViewGesture-WatchList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB23623E1AE5EE5B004CB54C /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
+		CB2362421AE5F206004CB54C /* revealViewGesture-News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "revealViewGesture-News.swift"; sourceTree = "<group>"; };
+		CB2362441AE5F66B004CB54C /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		CB23B2F51AE5F8980055DC15 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		CB2718541AE2100700EB475F /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		CB2718551AE2100700EB475F /* pick_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pick_bg@2x.png"; sourceTree = "<group>"; };
 		CB2718561AE2100700EB475F /* ocrBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ocrBack.png; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 		CB53C7011AE125E6006BDC9E /* backTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = backTableVC.swift; sourceTree = "<group>"; };
 		CB53C7051AE12600006BDC9E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		CB53C7061AE12600006BDC9E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		CBDC54C81AE002A700DEC5CF /* UserLoginandRegistration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserLoginandRegistration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDC54CC1AE002A700DEC5CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBDC54CD1AE002A700DEC5CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,9 +96,6 @@
 		CBEBC39E1AE0FC0E00158214 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		CBFB0D161AE19A000004CB14 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
 		CBFB0D171AE19A000004CB14 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
-		CBFB0D1A1AE1A02C0004CB14 /* revealViewGesture-ContactUs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "revealViewGesture-ContactUs.swift"; sourceTree = "<group>"; };
-		CBFB0D1B1AE1A02C0004CB14 /* revealViewGesture-News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "revealViewGesture-News.swift"; sourceTree = "<group>"; };
-		CBFB0D1C1AE1A02C0004CB14 /* revealViewGesture-WatchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "revealViewGesture-WatchList.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 		CB53C6FF1AE12455006BDC9E /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				CB63682E1AE5602A00CA5856 /* Features */,
 				CB2718531AE20F8800EB475F /* QRcodeScaner */,
 				CB53C7001AE1256C006BDC9E /* SlideFrame */,
 				CB53C6FE1AE12443006BDC9E /* UserCenter */,
@@ -161,11 +166,19 @@
 				CB53C7051AE12600006BDC9E /* SWRevealViewController.h */,
 				CB53C7061AE12600006BDC9E /* SWRevealViewController.m */,
 				CB53C7011AE125E6006BDC9E /* backTableVC.swift */,
-				CBFB0D1A1AE1A02C0004CB14 /* revealViewGesture-ContactUs.swift */,
-				CBFB0D1B1AE1A02C0004CB14 /* revealViewGesture-News.swift */,
-				CBFB0D1C1AE1A02C0004CB14 /* revealViewGesture-WatchList.swift */,
 			);
 			name = SlideFrame;
+			sourceTree = "<group>";
+		};
+		CB63682E1AE5602A00CA5856 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */,
+				CB23623E1AE5EE5B004CB54C /* TimelineTableViewController.swift */,
+				CB2362441AE5F66B004CB54C /* AboutUsViewController.swift */,
+				CB23B2F51AE5F8980055DC15 /* TimelineTableViewCell.swift */,
+			);
+			name = Features;
 			sourceTree = "<group>";
 		};
 		CBDC54BF1AE002A700DEC5CF = {
@@ -193,6 +206,7 @@
 				CB53C6FF1AE12455006BDC9E /* Assembly */,
 				CBDC54CD1AE002A700DEC5CF /* AppDelegate.swift */,
 				CBDC54D41AE002A700DEC5CF /* Main.storyboard */,
+				CB2362421AE5F206004CB54C /* revealViewGesture-News.swift */,
 				CBDC54D71AE002A700DEC5CF /* Images.xcassets */,
 				CBDC54D91AE002A700DEC5CF /* LaunchScreen.xib */,
 				CBDC54CB1AE002A700DEC5CF /* Supporting Files */,
@@ -356,15 +370,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB53C7031AE125E6006BDC9E /* backTableVC.swift in Sources */,
-				CBFB0D1F1AE1A02C0004CB14 /* revealViewGesture-WatchList.swift in Sources */,
-				CBFB0D1E1AE1A02C0004CB14 /* revealViewGesture-News.swift in Sources */,
+				CB6368301AE5605F00CA5856 /* ComposeViewController.swift in Sources */,
 				CBDC54F11AE0130100DEC5CF /* RegisterPageViewController.swift in Sources */,
-				CBFB0D1D1AE1A02C0004CB14 /* revealViewGesture-ContactUs.swift in Sources */,
+				CB23B2F61AE5F8980055DC15 /* TimelineTableViewCell.swift in Sources */,
 				CB27185E1AE2100700EB475F /* QRViewController.swift in Sources */,
+				CB2362451AE5F66B004CB54C /* AboutUsViewController.swift in Sources */,
 				CBDC54D31AE002A700DEC5CF /* UserCenterViewController.swift in Sources */,
 				CB53C7071AE12600006BDC9E /* SWRevealViewController.m in Sources */,
 				CBDC54CE1AE002A700DEC5CF /* AppDelegate.swift in Sources */,
+				CB2362431AE5F206004CB54C /* revealViewGesture-News.swift in Sources */,
 				CBDC54F31AE0277E00DEC5CF /* LoginPageViewController.swift in Sources */,
+				CB23623F1AE5EE5B004CB54C /* TimelineTableViewController.swift in Sources */,
 				CBEBC39F1AE0FC0E00158214 /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
