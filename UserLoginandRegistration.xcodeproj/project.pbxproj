@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB12EDA61AE9430A000BE790 /* SwiftCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB12EDA51AE9430A000BE790 /* SwiftCoreDataHelper.m */; };
 		CB23623F1AE5EE5B004CB54C /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB23623E1AE5EE5B004CB54C /* TimelineTableViewController.swift */; };
 		CB2362431AE5F206004CB54C /* revealViewGesture-News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2362421AE5F206004CB54C /* revealViewGesture-News.swift */; };
 		CB2362451AE5F66B004CB54C /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2362441AE5F66B004CB54C /* AboutUsViewController.swift */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB12EDA41AE9430A000BE790 /* SwiftCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftCoreDataHelper.h; sourceTree = "<group>"; };
+		CB12EDA51AE9430A000BE790 /* SwiftCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftCoreDataHelper.m; sourceTree = "<group>"; };
 		CB23623E1AE5EE5B004CB54C /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		CB2362421AE5F206004CB54C /* revealViewGesture-News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "revealViewGesture-News.swift"; sourceTree = "<group>"; };
 		CB2362441AE5F66B004CB54C /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB12EDA71AE9430E000BE790 /* HelperClass */ = {
+			isa = PBXGroup;
+			children = (
+				CB12EDA41AE9430A000BE790 /* SwiftCoreDataHelper.h */,
+				CB12EDA51AE9430A000BE790 /* SwiftCoreDataHelper.m */,
+			);
+			name = HelperClass;
+			sourceTree = "<group>";
+		};
 		CB2718531AE20F8800EB475F /* QRcodeScaner */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +214,7 @@
 		CBDC54CA1AE002A700DEC5CF /* UserLoginandRegistration */ = {
 			isa = PBXGroup;
 			children = (
+				CB12EDA71AE9430E000BE790 /* HelperClass */,
 				CBDC54F41AE034B600DEC5CF /* Resource */,
 				CB53C6FF1AE12455006BDC9E /* Assembly */,
 				CBDC54CD1AE002A700DEC5CF /* AppDelegate.swift */,
@@ -381,6 +394,7 @@
 				CB2362431AE5F206004CB54C /* revealViewGesture-News.swift in Sources */,
 				CBDC54F31AE0277E00DEC5CF /* LoginPageViewController.swift in Sources */,
 				CB23623F1AE5EE5B004CB54C /* TimelineTableViewController.swift in Sources */,
+				CB12EDA61AE9430A000BE790 /* SwiftCoreDataHelper.m in Sources */,
 				CBEBC39F1AE0FC0E00158214 /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
