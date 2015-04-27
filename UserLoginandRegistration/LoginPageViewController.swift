@@ -54,6 +54,9 @@ class LoginPageViewController: UIViewController {
                 self.presentViewController(myRegAlert, animated: true, completion: nil)
             }
         }
+        
+        
+        
     }
 
         

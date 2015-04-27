@@ -60,6 +60,9 @@ class ComposeViewController: UIViewController {
                 companyNews.saveInBackgroundWithResultBlock { (succeed, error:NSError!) -> Void in
                     if succeed {
                         println("compose successful")
+                        
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                        
                     }else{
                         println("compose failed")
                     }
