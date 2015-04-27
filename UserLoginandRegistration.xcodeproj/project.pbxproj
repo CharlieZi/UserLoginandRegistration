@@ -26,6 +26,8 @@
 		CB3057031AED42F1003D1F83 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3056FF1AED42F1003D1F83 /* User.swift */; };
 		CB3057041AED42F1003D1F83 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3057001AED42F1003D1F83 /* Company.swift */; };
 		CB3057051AED42F1003D1F83 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3057011AED42F1003D1F83 /* News.swift */; };
+		CB3057091AEE3F76003D1F83 /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3057071AEE3F76003D1F83 /* WatchListTableViewCell.swift */; };
+		CB30570A1AEE3F76003D1F83 /* WatchListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3057081AEE3F76003D1F83 /* WatchListTableViewController.swift */; };
 		CB53C7031AE125E6006BDC9E /* backTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB53C7011AE125E6006BDC9E /* backTableVC.swift */; };
 		CB53C7071AE12600006BDC9E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB53C7061AE12600006BDC9E /* SWRevealViewController.m */; };
 		CB6368301AE5605F00CA5856 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */; };
@@ -77,6 +79,8 @@
 		CB3056FF1AED42F1003D1F83 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB3057001AED42F1003D1F83 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		CB3057011AED42F1003D1F83 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		CB3057071AEE3F76003D1F83 /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
+		CB3057081AEE3F76003D1F83 /* WatchListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListTableViewController.swift; sourceTree = "<group>"; };
 		CB53C7011AE125E6006BDC9E /* backTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = backTableVC.swift; sourceTree = "<group>"; };
 		CB53C7051AE12600006BDC9E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		CB53C7061AE12600006BDC9E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 			name = "Data Model";
 			sourceTree = "<group>";
 		};
+		CB30570B1AEE3F7F003D1F83 /* WatchList */ = {
+			isa = PBXGroup;
+			children = (
+				CB3057071AEE3F76003D1F83 /* WatchListTableViewCell.swift */,
+				CB3057081AEE3F76003D1F83 /* WatchListTableViewController.swift */,
+			);
+			name = WatchList;
+			sourceTree = "<group>";
+		};
 		CB53C6FE1AE12443006BDC9E /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +220,7 @@
 		CB63682E1AE5602A00CA5856 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CB30570B1AEE3F7F003D1F83 /* WatchList */,
 				CB3056FD1AED40A5003D1F83 /* Timeline */,
 				CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */,
 				CB2362441AE5F66B004CB54C /* AboutUsViewController.swift */,
@@ -401,6 +415,7 @@
 				CB53C7031AE125E6006BDC9E /* backTableVC.swift in Sources */,
 				CB6368301AE5605F00CA5856 /* ComposeViewController.swift in Sources */,
 				CBDC54F11AE0130100DEC5CF /* RegisterPageViewController.swift in Sources */,
+				CB3057091AEE3F76003D1F83 /* WatchListTableViewCell.swift in Sources */,
 				CB27185E1AE2100700EB475F /* QRViewController.swift in Sources */,
 				CB3057031AED42F1003D1F83 /* User.swift in Sources */,
 				CB2362451AE5F66B004CB54C /* AboutUsViewController.swift in Sources */,
@@ -416,6 +431,7 @@
 				CBEBC39F1AE0FC0E00158214 /* Regex.swift in Sources */,
 				CB3056FB1AED4094003D1F83 /* ListTableViewCell.swift in Sources */,
 				CB3057021AED42F1003D1F83 /* BmobSync.xcdatamodel in Sources */,
+				CB30570A1AEE3F76003D1F83 /* WatchListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

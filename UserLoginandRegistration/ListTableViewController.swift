@@ -418,66 +418,33 @@ class ListTableViewController: UITableViewController {
     
     func likeNews(sender:UIButton){
         
-        let likeRelation:BmobRelation = BmobRelation()
-        let likeUser:BmobUser = BmobUser.getCurrentUser() as BmobUser
+        var likeRelation:BmobRelation = BmobRelation()
+        var watchRelation:BmobRelation = BmobRelation()
+        
+        let currentUser:BmobUser = BmobUser.getCurrentUser() as BmobUser
         let itemDict:NSDictionary = NewsTimelineData.objectAtIndex(sender.tag)as! NSDictionary
 
         let findObject:BmobQuery = BmobQuery(className: "Company_News")
         findObject.getObjectInBackgroundWithId(itemDict.objectForKey("identifier")as! String, block: { (likeObject:BmobObject!, error:NSError!) -> Void in
             likeObject.addRelation(likeRelation, forKey: "like")
-            likeRelation.addObject(likeUser)
+            likeRelation.addObject(currentUser)
+            
+
+            currentUser.addRelation(watchRelation, forKey: "watch")
+            watchRelation.addObject(likeObject)
+            
             likeObject.updateInBackground()
+            currentUser.updateInBackground()
             self.tableView.reloadData()
         })
+
+        
+                
+        
+        
     }
     
-    
 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
     
 
     
