@@ -8,11 +8,21 @@
 
 import UIKit
 
-class RegisterPageViewController: UIViewController {
+
+protocol RegisterDatadelegate{
+    func registerData(LoginData:NSDictionary)
+}
+
+
+
+class RegisterPageViewController: UIViewController{
 
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     
+    
+    
+    var delegate:RegisterDatadelegate? = nil
     
 
     
@@ -73,6 +83,13 @@ class RegisterPageViewController: UIViewController {
                 var myRegAlert = UIAlertController(title: "Thanks", message: "Registration is complete!", preferredStyle: UIAlertControllerStyle.Alert)
                 
                 let okRegAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){ action in
+                    
+                    if self.delegate != nil {
+                        let LoginData:NSDictionary = ["email":usrEmail,"password":usrPword]
+                        self.delegate?.registerData(LoginData)
+                    }
+
+                    
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }
                 
@@ -91,8 +108,7 @@ class RegisterPageViewController: UIViewController {
 
         }
         
-        
-        
+     
         
     }
     
@@ -107,13 +123,17 @@ class RegisterPageViewController: UIViewController {
         self.presentViewController(myRegAlert, animated: true, completion: nil)
         
     }
+    
+    
+    @IBAction func BacktoLoginBtnClicked(sender: AnyObject) {
+
+
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+    }
 
 }
-
-
-
-
-
 
 
 

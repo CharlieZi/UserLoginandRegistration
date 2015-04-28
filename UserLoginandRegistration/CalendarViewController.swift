@@ -146,53 +146,52 @@ extension CalendarViewController: CVCalendarMenuViewDelegate {
 
 // MARK: - IB Actions
 
-extension CalendarViewController {
-    @IBAction func switchChanged(sender: UISwitch) {
-        if sender.on {
-            calendarView.changeDaysOutShowingState(false)
-            shouldShowDaysOut = true
-        } else {
-            calendarView.changeDaysOutShowingState(true)
-            shouldShowDaysOut = false
-        }
-    }
-    
-    @IBAction func todayMonthView() {
-        calendarView.toggleCurrentDayView()
-    }
-    
-    /// Switch to WeekView mode.
-    @IBAction func toWeekView(sender: AnyObject) {
-        calendarView.changeMode(.WeekView)
-    }
-    
-    /// Switch to MonthView mode.
-    @IBAction func toMonthView(sender: AnyObject) {
-        calendarView.changeMode(.MonthView)
-    }
-    
-    @IBAction func loadPrevious(sender: AnyObject) {
-        calendarView.loadPreviousView()
-    }
-    
-    
-    @IBAction func loadNext(sender: AnyObject) {
-        calendarView.loadNextView()
-    }
-}
+//extension CalendarViewController {
+//    @IBAction func switchChanged(sender: UISwitch) {
+//        if sender.on {
+//            calendarView.changeDaysOutShowingState(false)
+//            shouldShowDaysOut = true
+//        } else {
+//            calendarView.changeDaysOutShowingState(true)
+//            shouldShowDaysOut = false
+//        }
+//    }
 
-// MARK: - Convenience API Demo
+//    @IBAction func todayMonthView() {
+//        calendarView.toggleCurrentDayView()
+//    }
+//    
+//    /// Switch to WeekView mode.
+//    @IBAction func toWeekView(sender: AnyObject) {
+//        calendarView.changeMode(.WeekView)
+//    }
+//    
+//    /// Switch to MonthView mode.
+//    @IBAction func toMonthView(sender: AnyObject) {
+//        calendarView.changeMode(.MonthView)
+//    }
+//    
+//    @IBAction func loadPrevious(sender: AnyObject) {
+//        calendarView.loadPreviousView()
+//    }
+//    
+//    @IBAction func loadNext(sender: AnyObject) {
+//        calendarView.loadNextView()
+//    }
+//}
 
-extension CalendarViewController {
-    func toggleMonthViewWithMonthOffset(offset: Int) {
-        let calendar = NSCalendar.currentCalendar()
-        let calendarManager = calendarView.manager
-        let components = Manager.componentsForDate(NSDate()) // from today
-        
-        components.month += offset
-        
-        let resultDate = calendar.dateFromComponents(components)!
-        
-        self.calendarView.toggleViewWithDate(resultDate)
-    }
-}
+//// MARK: - Convenience API Demo
+//
+//extension CalendarViewController {
+//    func toggleMonthViewWithMonthOffset(offset: Int) {
+//        let calendar = NSCalendar.currentCalendar()
+//        let calendarManager = calendarView.manager
+//        let components = Manager.componentsForDate(NSDate()) // from today
+//        
+//        components.month += offset
+//        
+//        let resultDate = calendar.dateFromComponents(components)!
+//        
+//        self.calendarView.toggleViewWithDate(resultDate)
+//    }
+//}

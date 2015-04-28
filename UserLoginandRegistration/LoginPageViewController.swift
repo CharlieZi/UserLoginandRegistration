@@ -8,11 +8,18 @@
 
 import UIKit
 
-class LoginPageViewController: UIViewController {
+
+
+
+class LoginPageViewController: UIViewController,RegisterDatadelegate {
 
     @IBOutlet weak var userEmailTextFiled: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     
+    
+    
+    
+    // Life Cycle Start
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +32,39 @@ class LoginPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Life Cycle End
+
+    
+    
+    // Delegate
+    
+    func registerData(LoginData: NSDictionary) {
+        
+        userEmailTextFiled.text = LoginData.objectForKey("email") as! String
+        userPasswordTextField.text = LoginData.objectForKey("password") as! String
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "registerSegue"{
+            let viewController:RegisterPageViewController = segue.destinationViewController as! RegisterPageViewController
+            
+            viewController.delegate = self
+        }
+    
+    }
+
+}
+
+// Buttons
+
+extension LoginPageViewController{
+    
+    @IBAction func LaterBtnClicked(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    
+    }
+    
     @IBAction func LoginBtnClicked(sender: AnyObject) {
         
         let usrEmail = userEmailTextFiled.text
@@ -32,18 +72,18 @@ class LoginPageViewController: UIViewController {
         
         
         // check userData
- 
+        
         
         
         BmobUser.loginWithUsernameInBackground(usrEmail, password:usrPword){
             (user: BmobUser!, error: NSError!) -> Void in
             if user != nil {
-                dispatch_async(dispatch_get_main_queue()) {
-
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                    
-                    
-                }
+                
+                
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+                
             } else {
                 var myRegAlert = UIAlertController(title: "Alert", message: " Invalid Email or Password", preferredStyle: UIAlertControllerStyle.Alert)
                 
@@ -54,13 +94,30 @@ class LoginPageViewController: UIViewController {
                 self.presentViewController(myRegAlert, animated: true, completion: nil)
             }
         }
-        
-        
-        
     }
-
-        
     
-    
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

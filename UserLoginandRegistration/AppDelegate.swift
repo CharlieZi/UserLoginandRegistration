@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Bmob.registerWithAppKey("b9231fb2e6a12e64cf048063dcafca08")
         
+        
         return true
     }
 

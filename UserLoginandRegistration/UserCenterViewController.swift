@@ -10,8 +10,14 @@ import UIKit
 
 class UserCenterViewController: UIViewController {
     
+    @IBOutlet weak var LogoutBtn: UIButton!
 
     @IBOutlet weak var SlideMenuBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var testLabel: UILabel!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,30 +34,44 @@ class UserCenterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     override func viewDidAppear(animated: Bool) {
         
-        if(BmobUser.getCurrentUser()==nil){
-              self.performSegueWithIdentifier("loginView", sender: self)
+     
+        
+        if(BmobUser.getCurrentUser() == nil){
+            
+            LogoutBtn.setTitle("Sign in", forState: UIControlState.Normal)
+            
+            testLabel.text = "test"
+            
+            
+        }else{
+            
+            testLabel.text = "dddd"
+            
         }
         
         
-
         
 
     }
 
-
-    @IBAction func LogoutBtnClicked(sender: AnyObject) {
-//        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isuserLoggedIn")
-//        NSUserDefaults.standardUserDefaults().synchronize()
-        
-    BmobUser.logout()
-       
-    self.performSegueWithIdentifier("loginView", sender: self)
-
-    }
-    
 
 }
+
+extension UserCenterViewController{
+    
+    // button defination
+    
+    @IBAction func LogoutBtnClicked(sender: AnyObject) {
+        
+        BmobUser.logout()
+        
+        self.performSegueWithIdentifier("loginView", sender: self)
+    }
+    
+}
+
+
+
 
