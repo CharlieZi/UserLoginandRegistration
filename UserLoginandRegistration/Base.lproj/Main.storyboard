@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="DmV-WY-pTC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--User Center View Controller-->
@@ -251,7 +252,6 @@
         <!--Table View Controller-->
         <scene sceneID="aJC-L6-SSh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bf7-2R-Rsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="8WM-Mn-jdp" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="G5Z-sg-nmH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -352,6 +352,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bf7-2R-Rsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-356" y="-676"/>
         </scene>
@@ -576,7 +577,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="270" id="1pv-Oz-v3J" customClass="WatchListTableViewCell" customModule="UserLoginandRegistration" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="270" id="1pv-Oz-v3J" customClass="WatchListTableViewCell" customModule="UserLoginandRegistration" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1pv-Oz-v3J" id="AfI-ET-ODo">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -642,9 +643,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="mmw-t7-0x1">
                         <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="XdI-CW-Cvj"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="oWO-6R-iiP">
+                        <barButtonItem key="rightBarButtonItem" title="Calendar" id="oWO-6R-iiP">
                             <connections>
                                 <action selector="refreshBtnClicked:" destination="ZZ6-4c-x4B" id="1K8-EH-7uN"/>
+                                <segue destination="5dA-bh-vcu" kind="push" id="2W0-wF-FKQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -655,6 +657,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khm-vL-4t0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="534" y="69"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="fKZ-8b-ahu">
+            <objects>
+                <viewController id="5dA-bh-vcu" customClass="CalendarViewController" customModule="UserLoginandRegistration" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z2C-EV-GQd"/>
+                        <viewControllerLayoutGuide type="bottom" id="qhO-o9-J8U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QGA-yu-j6P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oej-Pc-aZy" customClass="CVCalendarMenuView" customModule="UserLoginandRegistration" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="320" height="31"/>
+                                <connections>
+                                    <outlet property="menuViewDelegate" destination="5dA-bh-vcu" id="Qtj-JP-X8q"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-Q4-ddF">
+                                <rect key="frame" x="139" y="357" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAf-kv-ZW8" customClass="CVCalendarView" customModule="UserLoginandRegistration" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="98" width="320" height="244"/>
+                                <connections>
+                                    <outlet property="animatorDelegate" destination="5dA-bh-vcu" id="6Eg-Je-y4U"/>
+                                    <outlet property="calendarAppearanceDelegate" destination="5dA-bh-vcu" id="Net-6z-yru"/>
+                                    <outlet property="calendarDelegate" destination="5dA-bh-vcu" id="KYf-UR-g6X"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Oej-Pc-aZy" firstAttribute="leading" secondItem="wAf-kv-ZW8" secondAttribute="leading" id="5SS-XA-ooM"/>
+                            <constraint firstItem="Oej-Pc-aZy" firstAttribute="centerX" secondItem="G6y-Q4-ddF" secondAttribute="centerX" id="Emj-RQ-O3r"/>
+                            <constraint firstAttribute="bottom" secondItem="Oej-Pc-aZy" secondAttribute="bottom" constant="473" id="MaT-le-Wq5"/>
+                            <constraint firstItem="qhO-o9-J8U" firstAttribute="top" secondItem="G6y-Q4-ddF" secondAttribute="bottom" constant="190" id="Wyy-sX-9Id"/>
+                            <constraint firstItem="Oej-Pc-aZy" firstAttribute="trailing" secondItem="wAf-kv-ZW8" secondAttribute="trailing" id="fMp-4O-g0G"/>
+                            <constraint firstItem="wAf-kv-ZW8" firstAttribute="top" secondItem="Oej-Pc-aZy" secondAttribute="bottom" constant="3" id="hhW-vw-3Oi"/>
+                            <constraint firstItem="G6y-Q4-ddF" firstAttribute="top" secondItem="wAf-kv-ZW8" secondAttribute="bottom" constant="15" id="m4t-GS-fmE"/>
+                            <constraint firstItem="Oej-Pc-aZy" firstAttribute="top" secondItem="Z2C-EV-GQd" secondAttribute="bottom" id="p7e-Rt-Evp"/>
+                            <constraint firstItem="wAf-kv-ZW8" firstAttribute="leading" secondItem="QGA-yu-j6P" secondAttribute="leadingMargin" constant="-16" id="sMc-3y-LeA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wAf-kv-ZW8" secondAttribute="trailing" constant="-16" id="txs-MP-d10"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jyu-dg-Ra4"/>
+                    <connections>
+                        <outlet property="calendarView" destination="wAf-kv-ZW8" id="yjQ-Uw-JsT"/>
+                        <outlet property="menuView" destination="Oej-Pc-aZy" id="2vX-LN-vGF"/>
+                        <outlet property="monthLabel" destination="G6y-Q4-ddF" id="GOT-bR-Dna"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k5v-Ei-CbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="69"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7bI-gF-0ku">
@@ -686,6 +746,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="crB-7g-CTO"/>
+        <segue reference="THM-KN-Yqy"/>
     </inferredMetricsTieBreakers>
 </document>
