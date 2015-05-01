@@ -10,6 +10,11 @@ import UIKit
 
 class UserCenterViewController: UIViewController {
     
+  
+    
+    @IBOutlet weak var cardView: UserCenterRKCardView!
+    
+    
     @IBOutlet weak var LogoutBtn: UIButton!
 
     @IBOutlet weak var SlideMenuBtn: UIBarButtonItem!
@@ -17,13 +22,24 @@ class UserCenterViewController: UIViewController {
     @IBOutlet weak var testLabel: UILabel!
     
     
-    
+    // life cycle start
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         SlideMenuBtn.target = self.revealViewController()
         SlideMenuBtn.action = Selector("revealToggle:")
+        
+        
+        
+        cardView.titleLabel.text = "test"
+        cardView.profileImageView.image = UIImage(named: "dummy")
+        cardView.coverImageView.image = UIImage(named: "cat")
+        cardView.removeBlur()
+        
+        
+        
+        
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 
@@ -36,18 +52,19 @@ class UserCenterViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
+        println(userDidExist())
      
         
-        if(BmobUser.getCurrentUser() == nil){
+        if(self.userDidExist()){
             
             LogoutBtn.setTitle("Sign in", forState: UIControlState.Normal)
-            
-            testLabel.text = "test"
             
             
         }else{
             
-            testLabel.text = "dddd"
+            LogoutBtn.setTitle("Sign out", forState: UIControlState.Normal)
+            
+
             
         }
         
@@ -55,7 +72,8 @@ class UserCenterViewController: UIViewController {
         
 
     }
-
+    
+    // life cycle end
 
 }
 
@@ -71,6 +89,34 @@ extension UserCenterViewController{
     }
     
 }
+
+extension UserCenterViewController{
+    
+    // my func
+    
+    func userDidExist()->Bool{
+        
+        let userStatus:Bool = (BmobUser.getCurrentUser() == nil) as Bool
+        if userStatus {
+            
+            return true
+            
+        }else{
+            
+            return false
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 

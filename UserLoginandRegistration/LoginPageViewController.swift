@@ -73,18 +73,19 @@ extension LoginPageViewController{
         
         // check userData
         
-        
-        
         BmobUser.loginWithUsernameInBackground(usrEmail, password:usrPword){
             (user: BmobUser!, error: NSError!) -> Void in
             if user != nil {
+              
                 
                 
-                
-                self.dismissViewControllerAnimated(true, completion: nil)
-                
+                let viewController:SWRevealViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController")as! SWRevealViewController
+               
+                self.presentViewController(viewController, animated: true, completion: nil)
+           
                 
             } else {
+                
                 var myRegAlert = UIAlertController(title: "Alert", message: " Invalid Email or Password", preferredStyle: UIAlertControllerStyle.Alert)
                 
                 let okRegAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)

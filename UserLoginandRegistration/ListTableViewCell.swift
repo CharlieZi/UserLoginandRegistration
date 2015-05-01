@@ -13,7 +13,7 @@ class ListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var CellUIView: UIView!
     
-    @IBOutlet weak var newsTitle: UILabel!
+    
     @IBOutlet weak var newsContent: UITextView!
     @IBOutlet weak var newsAuthor: UILabel!
     @IBOutlet weak var newsTimestamp: UILabel!
@@ -24,6 +24,7 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCounter: UILabel!
   
     
+    @IBOutlet weak var cardView: TimelineRKCardView!
     
     
     

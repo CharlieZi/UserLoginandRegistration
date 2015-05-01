@@ -19,7 +19,7 @@ class ComposeViewController: UIViewController {
     
     
     
-    
+    // life cycle start
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +38,18 @@ class ComposeViewController: UIViewController {
         
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // life cycle end
+        
+}
+
+
+extension ComposeViewController {
     
-    
- 
     @IBAction func DoneBtnClicked(sender: AnyObject) {
         
         var companyNews:BmobObject = BmobObject(className: "Company_News")
@@ -61,7 +64,9 @@ class ComposeViewController: UIViewController {
                     if succeed {
                         println("compose successful")
                         
-                        self.dismissViewControllerAnimated(true, completion: nil)
+                        let viewController:SWRevealViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController")as! SWRevealViewController
+                        
+                        self.presentViewController(viewController, animated: true, completion: nil)
                         
                     }else{
                         println("compose failed")
@@ -70,16 +75,24 @@ class ComposeViewController: UIViewController {
             }else{
                 println("textField Empty!")
             }
-
-
+            
+            
         }
-       
+        
     }
-    
-    
-    
-    
-    
-    
-    
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

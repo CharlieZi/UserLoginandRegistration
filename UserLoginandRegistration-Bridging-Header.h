@@ -5,3 +5,7 @@
 #import <BmobSDK/Bmob.h>
 #import "SWRevealViewController.h"
 #import "SwiftCoreDataHelper.h"
+#import "ICETutorialPage.h"
+#import "ICETutorialStyle.h"
+#import "ICETutorialController.h"
+
