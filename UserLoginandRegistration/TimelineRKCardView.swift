@@ -42,14 +42,13 @@ class TimelineRKCardView: UIView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        println(titleLabel.text)
+        
         
         self.setupView()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        println(titleLabel.text)
         self.setupView()
     }
     
@@ -127,7 +126,6 @@ class TimelineRKCardView: UIView {
         let titleLabelX:CGFloat = pp_circle.frame.origin.x + pp_circle.frame.size.width
 
         
-        println(titleLabel.text)
         
         titleLabel = UILabel(frame: CGRectMake(titleLabelX, cp_mask.frame.size.height + 7, self.frame.size.width - titleLabelX, 26))
         titleLabel.adjustsFontSizeToFitWidth = false
@@ -136,7 +134,7 @@ class TimelineRKCardView: UIView {
         titleLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
         titleLabel.text = "Title Label"
         
-        println(titleLabel.text)
+        
         
     // Register touch events on the label
         
@@ -185,7 +183,6 @@ extension TimelineRKCardView{
             self.delegate!.titleLabelTap()
  
         }else{
-            println("tetetet")
         }
     }
     
@@ -194,7 +191,7 @@ extension TimelineRKCardView{
         {
             self.delegate!.coverPhotoTap()
         }else{
-            println("tetetet")
+            
         }
     }
     
@@ -203,7 +200,7 @@ extension TimelineRKCardView{
         {
             self.delegate!.profilePhotoTap("test")
         }else{
-            println("tetetet")
+            
         }
     }
 

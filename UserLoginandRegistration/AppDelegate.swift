@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ICETutorialControllerDele
     
     func tutorialController(tutorialController: ICETutorialController!, didClickOnLeftButton sender: UIButton!) {
         
-        println("another test")
+        
     }
     
     func tutorialController(tutorialController: ICETutorialController!, didClickOnRightButton sender: UIButton!) {

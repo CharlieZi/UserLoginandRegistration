@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserCenterViewController: UIViewController {
+class UserCenterViewController: UIViewController,UserCenterRKCardViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
   
     
@@ -33,10 +33,14 @@ class UserCenterViewController: UIViewController {
         
         
         cardView.titleLabel.text = "test"
-        cardView.profileImageView.image = UIImage(named: "dummy")
+        
+        BmobProfileImageHelper.LoadProfileImage { (profileImage) -> Void in
+            self.cardView.profileImageView.image = profileImage
+        }
+        
         cardView.coverImageView.image = UIImage(named: "cat")
         cardView.removeBlur()
-        
+        cardView.delegate = self
         
         
         
@@ -52,7 +56,7 @@ class UserCenterViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        println(userDidExist())
+        
      
         
         if(self.userDidExist()){
@@ -88,6 +92,23 @@ extension UserCenterViewController{
         self.performSegueWithIdentifier("loginView", sender: self)
     }
     
+    
+    @IBAction func uploadBtnClicked(sender: AnyObject) {
+        
+        let image:UIImage = UIImage(named: "cat")!
+        
+        BmobProfileImageHelper.BmobUserPicUpload("cat", image: image)
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
 }
 
 extension UserCenterViewController{
@@ -109,9 +130,77 @@ extension UserCenterViewController{
     }
 }
 
+extension UserCenterViewController{
+    
+    
+    
+    
+    func profilePhotoTap() {
+        
+        let imagePicker:UIImagePickerController = UIImagePickerController()
+        
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(imagePicker, animated: true  , completion: nil)
 
+    }
+    
+    func coverPhotoTap() {
+        
+    }
+    
+    func titleLabelTap() {
+        
+    }
+    
+} //delegate
 
+extension UserCenterViewController{
+    
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        let pickedImage:UIImage = (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
+        
+        let smallPicture = scaleImageWidth(pickedImage, newSize: CGSizeMake(100, 100))
+        
+        var sizeOfImageView:CGRect =  cardView.profileImageView.frame
+        sizeOfImageView.size = smallPicture.size
+        cardView.profileImageView.frame = sizeOfImageView
+        cardView.profileImageView.image = smallPicture
+        
+        BmobProfileImageHelper.BmobUserPicUpload(BmobUser.getCurrentUser().objectId, image: smallPicture)
+        
+      
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func scaleImageWidth(image:UIImage,newSize:CGSize)->UIImage{
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
+        
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsGetImageFromCurrentImageContext()
+        
+        return newImage
+        
+        
+    }
+    
+    
+    
 
+    
+    
+} // profile image Picker
 
 
 

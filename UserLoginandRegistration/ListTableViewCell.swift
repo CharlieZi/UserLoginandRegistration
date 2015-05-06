@@ -18,12 +18,8 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var newsAuthor: UILabel!
     @IBOutlet weak var newsTimestamp: UILabel!
     
-    
     @IBOutlet weak var likeBtn: UIButton!
-        
     @IBOutlet weak var likeCounter: UILabel!
-  
-    
     @IBOutlet weak var cardView: TimelineRKCardView!
     
     

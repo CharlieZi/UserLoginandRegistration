@@ -28,13 +28,21 @@ class ComposeViewController: UIViewController {
         ComposeTextView.layer.borderColor = UIColor.blackColor().CGColor
         ComposeTextView.layer.borderWidth = 0.5
         ComposeTextView.layer.cornerRadius = 5
-//        ComposeTextView.becomeFirstResponder()
-        
         
         
         SlideMenuBtn.target = self.revealViewController()
         SlideMenuBtn.action = Selector("revealToggle:")
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+
+        
+        let localImage = UIImage(named: "dummy")
+        
+        BmobProfileImageHelper.BmobUserPicUpload("test", image: localImage)
+        
+       
+        
+
+        
         
     }
     
@@ -82,6 +90,24 @@ extension ComposeViewController {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

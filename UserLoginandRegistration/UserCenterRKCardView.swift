@@ -13,7 +13,7 @@ import UIKit
 protocol UserCenterRKCardViewDelegate{
     func titleLabelTap()
     func coverPhotoTap()
-    func profilePhotoTap(test:NSString)
+    func profilePhotoTap()
 }
 
 
@@ -42,14 +42,14 @@ class UserCenterRKCardView: UIView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        println(titleLabel.text)
+        
         
         self.setupView()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        println(titleLabel.text)
+        
         self.setupView()
     }
     
@@ -132,7 +132,7 @@ class UserCenterRKCardView: UIView {
         let titleLabelX:CGFloat = pp_circle.frame.origin.x + pp_circle.frame.size.width
 
         
-        println(titleLabel.text)
+        
         
         titleLabel = UILabel(frame: CGRectMake(titleLabelX, cp_mask.frame.size.height + 7, self.frame.size.width - titleLabelX, 26))
         titleLabel.adjustsFontSizeToFitWidth = false
@@ -141,7 +141,7 @@ class UserCenterRKCardView: UIView {
         titleLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
         titleLabel.text = "Title Label"
         
-        println(titleLabel.text)
+        
         
     // Register touch events on the label
         
@@ -187,28 +187,23 @@ extension UserCenterRKCardView{
     func titleLabelTap() -> Void{
         if delegate != nil
         {
-            self.delegate!.titleLabelTap()
+            self.delegate?.titleLabelTap()
  
-        }else{
-            println("tetetet")
         }
     }
     
     func coverPhotoTap() -> Void{
         if delegate != nil
         {
-            self.delegate!.coverPhotoTap()
-        }else{
-            println("tetetet")
+            self.delegate?.coverPhotoTap()
+        
         }
     }
     
     func profilePhotoTap() -> Void{
-        if (delegate == nil)
+        if delegate != nil
         {
-            self.delegate!.profilePhotoTap("test")
-        }else{
-            println("tetetet")
+            self.delegate?.profilePhotoTap()
         }
     }
 

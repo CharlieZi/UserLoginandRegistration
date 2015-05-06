@@ -16,5 +16,5 @@ class News: NSManagedObject {
     @NSManaged var content: String
     @NSManaged var timestamp: NSDate
     @NSManaged var author: String
-
+    @NSManaged var profileImage: NSData
 }

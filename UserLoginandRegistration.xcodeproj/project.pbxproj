@@ -31,6 +31,7 @@
 		CB3E13041AF3385100215919 /* UserCenterRKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3E13031AF3385100215919 /* UserCenterRKCardView.swift */; };
 		CB3E13081AF33AEE00215919 /* TimelineRKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3E13071AF33AEE00215919 /* TimelineRKCardView.swift */; };
 		CB3E13491AF392C200215919 /* SWRearRKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3E13481AF392C200215919 /* SWRearRKCardView.swift */; };
+		CB3E137C1AF3EAEE00215919 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3E137B1AF3EAEE00215919 /* BmobSDK.framework */; };
 		CB51492E1AEF6FF5009C5CBF /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5149141AEF6FF5009C5CBF /* CVCalendarContentViewController.swift */; };
 		CB51492F1AEF6FF5009C5CBF /* CVCalendarMonthContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5149151AEF6FF5009C5CBF /* CVCalendarMonthContentViewController.swift */; };
 		CB5149301AEF6FF5009C5CBF /* CVCalendarWeekContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5149161AEF6FF5009C5CBF /* CVCalendarWeekContentViewController.swift */; };
@@ -60,6 +61,10 @@
 		CB51494C1AEF73C9009C5CBF /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51494B1AEF73C9009C5CBF /* CalendarViewController.swift */; };
 		CB5149571AF0C4EB009C5CBF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5149561AF0C4EB009C5CBF /* SWRevealViewController.m */; };
 		CB6368301AE5605F00CA5856 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */; };
+		CB85FD381AF9FED100B67B88 /* BmobProfileImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85FD371AF9FED100B67B88 /* BmobProfileImageHelper.swift */; };
+		CBCF94D51AF736C3007F4FE8 /* BmobProFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF94D41AF736C3007F4FE8 /* BmobProFileHelper.swift */; };
+		CBCF94D71AF75CB4007F4FE8 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF94D61AF75CB4007F4FE8 /* Async.swift */; };
+		CBD872881AF881870083743A /* BmobCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD872871AF881870083743A /* BmobCoreDataHelper.swift */; };
 		CBD9198C1AF1128900A5C7B3 /* ICETutorialController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD919871AF1128900A5C7B3 /* ICETutorialController.m */; };
 		CBD9198D1AF1128900A5C7B3 /* ICETutorialPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD919891AF1128900A5C7B3 /* ICETutorialPage.m */; };
 		CBD9198E1AF1128900A5C7B3 /* ICETutorialStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD9198B1AF1128900A5C7B3 /* ICETutorialStyle.m */; };
@@ -72,7 +77,6 @@
 		CBDC54E71AE002A700DEC5CF /* UserLoginandRegistrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54E61AE002A700DEC5CF /* UserLoginandRegistrationTests.swift */; };
 		CBDC54F11AE0130100DEC5CF /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */; };
 		CBDC54F31AE0277E00DEC5CF /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC54F21AE0277E00DEC5CF /* LoginPageViewController.swift */; };
-		CBEBC34E1AE0575500158214 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBEBC34D1AE0575500158214 /* BmobSDK.framework */; };
 		CBEBC3501AE0578700158214 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CBEBC34F1AE0578700158214 /* libsqlite3.dylib */; };
 		CBEBC3521AE0579700158214 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CBEBC3511AE0579700158214 /* libicucore.dylib */; };
 		CBEBC3541AE057BC00158214 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CBEBC3531AE057BC00158214 /* libz.1.2.5.dylib */; };
@@ -117,6 +121,7 @@
 		CB3E13031AF3385100215919 /* UserCenterRKCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenterRKCardView.swift; sourceTree = "<group>"; };
 		CB3E13071AF33AEE00215919 /* TimelineRKCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineRKCardView.swift; sourceTree = "<group>"; };
 		CB3E13481AF392C200215919 /* SWRearRKCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWRearRKCardView.swift; sourceTree = "<group>"; };
+		CB3E137B1AF3EAEE00215919 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		CB5149141AEF6FF5009C5CBF /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarContentViewController.swift; sourceTree = "<group>"; };
 		CB5149151AEF6FF5009C5CBF /* CVCalendarMonthContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarMonthContentViewController.swift; sourceTree = "<group>"; };
 		CB5149161AEF6FF5009C5CBF /* CVCalendarWeekContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVCalendarWeekContentViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +152,10 @@
 		CB5149551AF0C4EB009C5CBF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		CB5149561AF0C4EB009C5CBF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		CB85FD371AF9FED100B67B88 /* BmobProfileImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmobProfileImageHelper.swift; sourceTree = "<group>"; };
+		CBCF94D41AF736C3007F4FE8 /* BmobProFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmobProFileHelper.swift; sourceTree = "<group>"; };
+		CBCF94D61AF75CB4007F4FE8 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		CBD872871AF881870083743A /* BmobCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmobCoreDataHelper.swift; sourceTree = "<group>"; };
 		CBD919861AF1128900A5C7B3 /* ICETutorialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICETutorialController.h; sourceTree = "<group>"; };
 		CBD919871AF1128900A5C7B3 /* ICETutorialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICETutorialController.m; sourceTree = "<group>"; };
 		CBD919881AF1128900A5C7B3 /* ICETutorialPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICETutorialPage.h; sourceTree = "<group>"; };
@@ -166,7 +175,6 @@
 		CBDC54E61AE002A700DEC5CF /* UserLoginandRegistrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginandRegistrationTests.swift; sourceTree = "<group>"; };
 		CBDC54F01AE0130100DEC5CF /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		CBDC54F21AE0277E00DEC5CF /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
-		CBEBC34D1AE0575500158214 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		CBEBC34F1AE0578700158214 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		CBEBC3511AE0579700158214 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		CBEBC3531AE057BC00158214 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
@@ -182,11 +190,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBEBC3571AE057CA00158214 /* CoreFoundation.framework in Frameworks */,
+				CB3E137C1AF3EAEE00215919 /* BmobSDK.framework in Frameworks */,
 				CBEBC3581AE057CA00158214 /* Foundation.framework in Frameworks */,
 				CBEBC3541AE057BC00158214 /* libz.1.2.5.dylib in Frameworks */,
 				CBEBC3521AE0579700158214 /* libicucore.dylib in Frameworks */,
 				CBEBC3501AE0578700158214 /* libsqlite3.dylib in Frameworks */,
-				CBEBC34E1AE0575500158214 /* BmobSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +213,10 @@
 			children = (
 				CB12EDA41AE9430A000BE790 /* SwiftCoreDataHelper.h */,
 				CB12EDA51AE9430A000BE790 /* SwiftCoreDataHelper.m */,
+				CBCF94D61AF75CB4007F4FE8 /* Async.swift */,
+				CBCF94D41AF736C3007F4FE8 /* BmobProFileHelper.swift */,
+				CBD872871AF881870083743A /* BmobCoreDataHelper.swift */,
+				CB85FD371AF9FED100B67B88 /* BmobProfileImageHelper.swift */,
 			);
 			name = HelperClass;
 			sourceTree = "<group>";
@@ -410,7 +422,7 @@
 			children = (
 				CBEBC3591AE057F100158214 /* UserLoginandRegistration-Bridging-Header.h */,
 				CBEBC39E1AE0FC0E00158214 /* Regex.swift */,
-				CBEBC34D1AE0575500158214 /* BmobSDK.framework */,
+				CB3E137B1AF3EAEE00215919 /* BmobSDK.framework */,
 				CBEBC3551AE057CA00158214 /* CoreFoundation.framework */,
 				CBEBC3561AE057CA00158214 /* Foundation.framework */,
 				CBEBC3531AE057BC00158214 /* libz.1.2.5.dylib */,
@@ -563,6 +575,7 @@
 				CBD9198D1AF1128900A5C7B3 /* ICETutorialPage.m in Sources */,
 				CB51493E1AEF6FF5009C5CBF /* CVCalendarViewDelegate.swift in Sources */,
 				CB6368301AE5605F00CA5856 /* ComposeViewController.swift in Sources */,
+				CBD872881AF881870083743A /* BmobCoreDataHelper.swift in Sources */,
 				CB5149361AEF6FF5009C5CBF /* CVAuxiliaryView.swift in Sources */,
 				CBDC54F11AE0130100DEC5CF /* RegisterPageViewController.swift in Sources */,
 				CB51493C1AEF6FF5009C5CBF /* CVDate.swift in Sources */,
@@ -570,6 +583,7 @@
 				CB51492F1AEF6FF5009C5CBF /* CVCalendarMonthContentViewController.swift in Sources */,
 				CB51493D1AEF6FF5009C5CBF /* CVSet.swift in Sources */,
 				CB5149411AEF6FF5009C5CBF /* CVCalendarViewAppearanceDelegate.swift in Sources */,
+				CBCF94D71AF75CB4007F4FE8 /* Async.swift in Sources */,
 				CB51493B1AEF6FF5009C5CBF /* CVCalendarManager.swift in Sources */,
 				CB5149311AEF6FF5009C5CBF /* CVCalendarView.swift in Sources */,
 				CB5149331AEF6FF5009C5CBF /* CVCalendarMonthView.swift in Sources */,
@@ -586,6 +600,7 @@
 				CB5149371AEF6FF5009C5CBF /* CVCalendarViewAnimator.swift in Sources */,
 				CBDC54D31AE002A700DEC5CF /* UserCenterViewController.swift in Sources */,
 				CBD9198C1AF1128900A5C7B3 /* ICETutorialController.m in Sources */,
+				CB85FD381AF9FED100B67B88 /* BmobProfileImageHelper.swift in Sources */,
 				CBDC54CE1AE002A700DEC5CF /* AppDelegate.swift in Sources */,
 				CB2362431AE5F206004CB54C /* revealViewGesture-News.swift in Sources */,
 				CBDC54F31AE0277E00DEC5CF /* LoginPageViewController.swift in Sources */,
@@ -598,6 +613,7 @@
 				CB5149441AEF6FF5009C5CBF /* CVSelectionType.swift in Sources */,
 				CB12EDA61AE9430A000BE790 /* SwiftCoreDataHelper.m in Sources */,
 				CB5149451AEF6FF5009C5CBF /* CVScrollDirection.swift in Sources */,
+				CBCF94D51AF736C3007F4FE8 /* BmobProFileHelper.swift in Sources */,
 				CB51493A1AEF6FF5009C5CBF /* CVCalendarViewAppearance.swift in Sources */,
 				CB51492E1AEF6FF5009C5CBF /* CVCalendarContentViewController.swift in Sources */,
 				CB5149341AEF6FF5009C5CBF /* CVCalendarWeekView.swift in Sources */,

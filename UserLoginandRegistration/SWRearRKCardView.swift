@@ -13,7 +13,7 @@ import UIKit
 protocol SWRearRKCardViewDelegate{
     func titleLabelTap()
     func coverPhotoTap()
-    func profilePhotoTap(test:NSString)
+    func profilePhotoTap()
 }
 
 
@@ -42,14 +42,14 @@ class SWRearRKCardView: UIView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        println(titleLabel.text)
+  
         
         self.setupView()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        println(titleLabel.text)
+        
         self.setupView()
     }
     
@@ -144,7 +144,6 @@ class SWRearRKCardView: UIView {
         titleLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
         titleLabel.text = "Title Label"
         
-        println(titleLabel.text)
         
     // Register touch events on the label
         
@@ -194,7 +193,6 @@ extension SWRearRKCardView{
             self.delegate!.titleLabelTap()
  
         }else{
-            println("tetetet")
         }
     }
     
@@ -203,16 +201,15 @@ extension SWRearRKCardView{
         {
             self.delegate!.coverPhotoTap()
         }else{
-            println("tetetet")
         }
     }
     
     func profilePhotoTap() -> Void{
         if (delegate == nil)
         {
-            self.delegate!.profilePhotoTap("test")
+            self.delegate!.profilePhotoTap()
         }else{
-            println("tetetet")
+            
         }
     }
 

@@ -15,5 +15,6 @@ class User: NSManagedObject {
 
     @NSManaged var identifier: String
     @NSManaged var name: String
+    @NSManaged var profileImage: NSData
 
 }

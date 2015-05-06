@@ -57,15 +57,7 @@ class ListTableViewController: UITableViewController {
     
 
 
-
     
-    
-    
-    
-    
-    
-
-
 
     // MARK: - Table view data source
 
@@ -84,44 +76,20 @@ class ListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:ListTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ListTableViewCell
 
-        // Configure the cell
-        
-        
-        
-        
+        //---Configure the cell
         cell.cardView.profileImageView.image = UIImage(named: "dummy")
-        
         cell.cardView.addShadow()
-        
-        
-        
-        
-        
-        
-        
         cell.newsAuthor.alpha = 0
         cell.newsTimestamp.alpha = 0
-
         cell.newsContent.alpha = 0
-        
         cell.CellUIView.alpha = 0
-//        
-//        cell.CellUIView.layer.cornerRadius = 0.2
-//        cell.CellUIView.layer.masksToBounds = false
-//        cell.CellUIView.layer.shadowColor = UIColor.blackColor().CGColor
-//        cell.CellUIView.layer.shadowOffset = CGSize(width: 0, height: 3);
-//        cell.CellUIView.layer.shadowOpacity = 0.2
-        
-        
-        // data operation
-        
-        
+        //---date operation
         var dateFormattor:NSDateFormatter = NSDateFormatter()
         dateFormattor.dateFormat = "yyyy-MM-dd hh:mm:ss"
-        
+        //---Variable Defination
         let itemDict:NSDictionary = NewsTimelineData.objectAtIndex(indexPath.row) as! NSDictionary
         let identifier:String = itemDict.objectForKey("identifier")as! String
-        
+        //---Coredata Fetch
         let moc:NSManagedObjectContext = SwiftCoreDataHelper.managedObjectContext()
         let predicate:NSPredicate = NSPredicate(format: "identifier == '\(identifier)'")
         let results:NSArray = SwiftCoreDataHelper.fetchEntitiesForClass(NSStringFromClass(News), withPredicate: predicate, inManagedObjectContext: moc)
@@ -130,94 +98,38 @@ class ListTableViewController: UITableViewController {
             
             let localLoadNews:News = results.lastObject as! News
             
-            
-            
+            cell.cardView.profileImageView.image = UIImage(data: localLoadNews.profileImage)
             cell.cardView.titleLabel.text = localLoadNews.author
             cell.cardView.titleLabel.font = UIFont(name: "HelveticaNeue-Light", size: 10)
-            
             cell.newsAuthor.text = localLoadNews.author
             cell.newsTimestamp.text = dateFormattor.stringFromDate(localLoadNews.timestamp)
-
             cell.newsContent.text = localLoadNews.content
             
         }else{
-            var loadTimelineData:BmobQuery = BmobQuery(className: "Company_News")
-            
-            loadTimelineData.getObjectInBackgroundWithId(itemDict.objectForKey("identifier")as! String, block: { (singleNews, error:NSError!) -> Void in
-                if error == nil {
-                    
-                    
-                    
-                    
-                    let content:String = singleNews.objectForKey("Content")as! String
-                    let timestamptemp:NSDate = singleNews.createdAt
-                    
+            BmobCoreDataHelper.LoadBmobDataNotInCoredata("Company_News", itemDict: itemDict, block: { (profileImage, author, content) -> Void in
+                cell.cardView.profileImageView.image = profileImage
+                cell.cardView.titleLabel.text = author
+                cell.cardView.titleLabel.font = UIFont(name: "HelveticaNeue-Light", size: 10)
+                cell.newsAuthor.text = author
+                cell.newsTimestamp.text = dateFormattor.stringFromDate(itemDict.objectForKey("timestamp")as! NSDate)
+                cell.newsContent.text = content
 
-                    
-                    
-                    var findUserName:BmobQuery = BmobUser.query()
-                    findUserName.getObjectInBackgroundWithId(singleNews.objectForKey("Company")as! String, block: { (user, error:NSError!) -> Void in
-                        if error == nil {
-                            let author:String = user.objectForKey("username") as! String
-                            
-                            
-                            let moc:NSManagedObjectContext = SwiftCoreDataHelper.managedObjectContext()
-                            var addNews:News = SwiftCoreDataHelper.insertManagedObjectOfClass(NSStringFromClass(News), inManagedObjectContext: moc) as! News
-                            
-                            addNews.author = author
-                            addNews.identifier = identifier
-                            addNews.content = content
-                            addNews.timestamp = itemDict.objectForKey("timestamp")as! NSDate
-                            
-                            SwiftCoreDataHelper.saveManagedObjectContext(moc)
-                            
-                            
-                            cell.cardView.titleLabel.text = author
-                            cell.cardView.titleLabel.font = UIFont(name: "HelveticaNeue-Light", size: 10)
-                            cell.newsAuthor.text = author
-                            cell.newsTimestamp.text = dateFormattor.stringFromDate(itemDict.objectForKey("timestamp")as! NSDate)
-
-                            cell.newsContent.text = content
-                            
-                        }
-                    })
-                   
-                    
-                }
             })
-            
-            }
+        }
         
- 
-        
-        
-        // animation
+        //---animation
         
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             cell.newsAuthor.alpha = 1
             cell.newsTimestamp.alpha = 1
-
             cell.newsContent.alpha = 1
-            
             cell.CellUIView.alpha = 1
-//            
-//            cell.CellUIView.layer.cornerRadius = 0.5
-//            cell.CellUIView.layer.masksToBounds = false
-//            cell.CellUIView.layer.shadowColor = UIColor.blackColor().CGColor
-//            cell.CellUIView.layer.shadowOffset = CGSize(width: 0, height: 3);
-//            cell.CellUIView.layer.shadowOpacity = 0.5
-            
-            
+
             })
         
-        
-        // like
-        
-
-        
+        //---like func
         cell.likeBtn.tag = indexPath.row
         cell.likeBtn.addTarget(self, action: "likeNews:", forControlEvents: UIControlEvents.TouchUpInside)
-
         var likequery:BmobQuery = BmobQuery.queryForUser()
         var currentNews:BmobObject = BmobObject(withoutDatatWithClassName: "Company_News", objectId: itemDict.objectForKey("identifier")as! String)
         likequery.whereObjectKey("like", relatedTo:currentNews )
@@ -225,8 +137,11 @@ class ListTableViewController: UITableViewController {
             cell.likeCounter.text = toString(likeNum)
         }
         
+        //---fin
         
         return cell
+        
+        
     }
     
     
@@ -272,6 +187,7 @@ extension ListTableViewController{
         
         var likeRelation:BmobRelation = BmobRelation()
         var watchRelation:BmobRelation = BmobRelation()
+        println("likeBtn")
         
         let currentUser:BmobUser = BmobUser.getCurrentUser() as BmobUser
         let itemDict:NSDictionary = NewsTimelineData.objectAtIndex(sender.tag)as! NSDictionary

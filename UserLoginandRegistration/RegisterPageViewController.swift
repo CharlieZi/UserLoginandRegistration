@@ -73,6 +73,7 @@ class RegisterPageViewController: UIViewController{
         UserData.setUserName(usrEmail)
         UserData.setEmail(usrEmail)
         UserData.setPassword(usrPword)
+        UserData.setObject("dummy.png", forKey: "profileImage")
         
         
         
