@@ -196,7 +196,7 @@ extension TimelineRKCardView{
     }
     
     func profilePhotoTap() -> Void{
-        if (delegate == nil)
+        if (delegate != nil)
         {
             self.delegate!.profilePhotoTap("test")
         }else{

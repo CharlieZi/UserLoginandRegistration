@@ -28,11 +28,11 @@ class SWRearRKCardView: UIView {
     var coverImageView = UIImageView()
     var titleLabel = UILabel()
     
-    var CP_RATIO:CGFloat = 0.8
-    var CORNER_RATIO:CGFloat = 0.015
-    var PP_RATIO:CGFloat = 0.3
-    var PP_X_RATIO:CGFloat = 0.3
-    var PP_Y_RATIO:CGFloat = 0.213
+    var CP_RATIO:CGFloat = 1.005
+    var CORNER_RATIO:CGFloat = 0.00
+    var PP_RATIO:CGFloat = 0.4
+    var PP_X_RATIO:CGFloat = 0.25
+    var PP_Y_RATIO:CGFloat = 0.26
     var PP_BUFF:CGFloat = 3
     var LABEL_Y_RATIO:CGFloat = 0.012
     
@@ -192,7 +192,6 @@ extension SWRearRKCardView{
         {
             self.delegate!.titleLabelTap()
  
-        }else{
         }
     }
     
@@ -200,16 +199,15 @@ extension SWRearRKCardView{
         if delegate != nil
         {
             self.delegate!.coverPhotoTap()
-        }else{
+       
         }
     }
     
     func profilePhotoTap() -> Void{
-        if (delegate == nil)
+        if (delegate != nil)
         {
             self.delegate!.profilePhotoTap()
-        }else{
-            
+        
         }
     }
 

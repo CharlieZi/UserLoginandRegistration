@@ -135,4 +135,22 @@ class BmobProfileImageHelper {
         
     }
     
+    
+    class func userDidExist()->Bool{
+        
+        let userStatus:Bool = (BmobUser.getCurrentUser() == nil) as Bool
+        if userStatus {
+            
+            return false
+            
+        }else{
+            
+            return true
+            
+        }
+    }
+
+    
+    
+    
 }

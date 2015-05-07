@@ -185,26 +185,32 @@ extension ListTableViewController{
     
     func likeNews(sender:UIButton){
         
-        var likeRelation:BmobRelation = BmobRelation()
-        var watchRelation:BmobRelation = BmobRelation()
-        println("likeBtn")
-        
-        let currentUser:BmobUser = BmobUser.getCurrentUser() as BmobUser
-        let itemDict:NSDictionary = NewsTimelineData.objectAtIndex(sender.tag)as! NSDictionary
-        
-        let findObject:BmobQuery = BmobQuery(className: "Company_News")
-        findObject.getObjectInBackgroundWithId(itemDict.objectForKey("identifier")as! String, block: { (likeObject:BmobObject!, error:NSError!) -> Void in
-            likeObject.addRelation(likeRelation, forKey: "like")
-            likeRelation.addObject(currentUser)
+        if BmobProfileImageHelper.userDidExist() {
+            var likeRelation:BmobRelation = BmobRelation()
+            var watchRelation:BmobRelation = BmobRelation()
             
+            let currentUser:BmobUser = BmobUser.getCurrentUser() as BmobUser
+            let itemDict:NSDictionary = NewsTimelineData.objectAtIndex(sender.tag)as! NSDictionary
             
-            currentUser.addRelation(watchRelation, forKey: "watch")
-            watchRelation.addObject(likeObject)
+            let findObject:BmobQuery = BmobQuery(className: "Company_News")
+            findObject.getObjectInBackgroundWithId(itemDict.objectForKey("identifier")as! String, block: { (likeObject:BmobObject!, error:NSError!) -> Void in
+                likeObject.addRelation(likeRelation, forKey: "like")
+                likeRelation.addObject(currentUser)
+                
+                
+                currentUser.addRelation(watchRelation, forKey: "watch")
+                watchRelation.addObject(likeObject)
+                
+                likeObject.updateInBackground()
+                currentUser.updateInBackground()
+                self.tableView.reloadData()
+            })
+
+        }else{
             
-            likeObject.updateInBackground()
-            currentUser.updateInBackground()
-            self.tableView.reloadData()
-        })
+            println("not login yet")
+            
+        }
         
     }
     

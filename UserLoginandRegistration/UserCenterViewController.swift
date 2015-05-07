@@ -26,23 +26,24 @@ class UserCenterViewController: UIViewController,UserCenterRKCardViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         SlideMenuBtn.target = self.revealViewController()
         SlideMenuBtn.action = Selector("revealToggle:")
         
         
         
         cardView.titleLabel.text = "test"
-        
-        BmobProfileImageHelper.LoadProfileImage { (profileImage) -> Void in
-            self.cardView.profileImageView.image = profileImage
-        }
-        
         cardView.coverImageView.image = UIImage(named: "cat")
         cardView.removeBlur()
         cardView.delegate = self
         
-        
+        if userDidExist() {
+            BmobProfileImageHelper.LoadProfileImage { (profileImage) -> Void in
+                self.cardView.profileImageView.image = profileImage
+            }
+        }else{
+            cardView.profileImageView.image = UIImage(named: "dummy")
+        }
         
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -59,15 +60,13 @@ class UserCenterViewController: UIViewController,UserCenterRKCardViewDelegate, U
         
      
         
-        if(self.userDidExist()){
-            
-            LogoutBtn.setTitle("Sign in", forState: UIControlState.Normal)
-            
-            
-        }else{
+        if userDidExist() {
             
             LogoutBtn.setTitle("Sign out", forState: UIControlState.Normal)
             
+        }else{
+            
+            LogoutBtn.setTitle("Sign in", forState: UIControlState.Normal)
 
             
         }
@@ -81,7 +80,7 @@ class UserCenterViewController: UIViewController,UserCenterRKCardViewDelegate, U
 
 }
 
-extension UserCenterViewController{
+extension UserCenterViewController {
     
     // button defination
     
@@ -111,7 +110,7 @@ extension UserCenterViewController{
     
 }
 
-extension UserCenterViewController{
+extension UserCenterViewController {
     
     // my func
     
@@ -120,29 +119,33 @@ extension UserCenterViewController{
         let userStatus:Bool = (BmobUser.getCurrentUser() == nil) as Bool
         if userStatus {
             
-            return true
+            return false
             
         }else{
             
-            return false
+            return true
             
         }
     }
 }
 
-extension UserCenterViewController{
+extension UserCenterViewController {
     
     
     
     
     func profilePhotoTap() {
-        
-        let imagePicker:UIImagePickerController = UIImagePickerController()
-        
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(imagePicker, animated: true  , completion: nil)
+        if userDidExist(){
+            let imagePicker:UIImagePickerController = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(imagePicker, animated: true  , completion: nil)
+            
 
+        }else{
+            println("not login yet")
+        }
     }
     
     func coverPhotoTap() {
@@ -155,7 +158,7 @@ extension UserCenterViewController{
     
 } //delegate
 
-extension UserCenterViewController{
+extension UserCenterViewController {
     
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
@@ -169,8 +172,10 @@ extension UserCenterViewController{
         cardView.profileImageView.frame = sizeOfImageView
         cardView.profileImageView.image = smallPicture
         
+    
         BmobProfileImageHelper.BmobUserPicUpload(BmobUser.getCurrentUser().objectId, image: smallPicture)
-        
+     
+      
       
         
         picker.dismissViewControllerAnimated(true, completion: nil)
@@ -201,6 +206,7 @@ extension UserCenterViewController{
     
     
 } // profile image Picker
+
 
 
 

@@ -62,6 +62,7 @@
 		CB5149571AF0C4EB009C5CBF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5149561AF0C4EB009C5CBF /* SWRevealViewController.m */; };
 		CB6368301AE5605F00CA5856 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */; };
 		CB85FD381AF9FED100B67B88 /* BmobProfileImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85FD371AF9FED100B67B88 /* BmobProfileImageHelper.swift */; };
+		CB85FD441AFB393F00B67B88 /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85FD431AFB393F00B67B88 /* SWTableViewController.swift */; };
 		CBCF94D51AF736C3007F4FE8 /* BmobProFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF94D41AF736C3007F4FE8 /* BmobProFileHelper.swift */; };
 		CBCF94D71AF75CB4007F4FE8 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF94D61AF75CB4007F4FE8 /* Async.swift */; };
 		CBD872881AF881870083743A /* BmobCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD872871AF881870083743A /* BmobCoreDataHelper.swift */; };
@@ -153,6 +154,7 @@
 		CB5149561AF0C4EB009C5CBF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		CB85FD371AF9FED100B67B88 /* BmobProfileImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmobProfileImageHelper.swift; sourceTree = "<group>"; };
+		CB85FD431AFB393F00B67B88 /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWTableViewController.swift; sourceTree = "<group>"; };
 		CBCF94D41AF736C3007F4FE8 /* BmobProFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmobProFileHelper.swift; sourceTree = "<group>"; };
 		CBCF94D61AF75CB4007F4FE8 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		CBD872871AF881870083743A /* BmobCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmobCoreDataHelper.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				CB5149551AF0C4EB009C5CBF /* SWRevealViewController.h */,
 				CB5149561AF0C4EB009C5CBF /* SWRevealViewController.m */,
 				CB3E13481AF392C200215919 /* SWRearRKCardView.swift */,
+				CB85FD431AFB393F00B67B88 /* SWTableViewController.swift */,
 			);
 			name = SlideFrame;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				CBDC54CE1AE002A700DEC5CF /* AppDelegate.swift in Sources */,
 				CB2362431AE5F206004CB54C /* revealViewGesture-News.swift in Sources */,
 				CBDC54F31AE0277E00DEC5CF /* LoginPageViewController.swift in Sources */,
+				CB85FD441AFB393F00B67B88 /* SWTableViewController.swift in Sources */,
 				CB3056FC1AED4094003D1F83 /* ListTableViewController.swift in Sources */,
 				CB51494C1AEF73C9009C5CBF /* CalendarViewController.swift in Sources */,
 				CB5149391AEF6FF5009C5CBF /* CVCalendarDayViewControlCoordinator.swift in Sources */,

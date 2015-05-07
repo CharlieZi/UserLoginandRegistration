@@ -29,15 +29,6 @@
                                             <action selector="LogoutBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FTH-ov-fQi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzu-W0-SN3">
-                                        <rect key="frame" x="122" y="188" width="50" height="30"/>
-                                        <state key="normal" title="Upload">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="uploadBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="duV-YF-TXu"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -57,25 +48,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="534" y="-1429"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="GXv-O5-lJF">
-            <objects>
-                <viewController id="gqd-cG-auf" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NB8-mB-guM"/>
-                        <viewControllerLayoutGuide type="bottom" id="6Ur-fW-Xes"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OgJ-fE-2cE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="n1V-Ts-3nv"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LHj-dp-rM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="534" y="-2097"/>
         </scene>
         <!--Login Page View Controller-->
         <scene sceneID="wAn-OW-0Em">
@@ -291,7 +263,7 @@
         <!--Table View Controller-->
         <scene sceneID="aJC-L6-SSh">
             <objects>
-                <tableViewController id="8WM-Mn-jdp" sceneMemberID="viewController">
+                <tableViewController id="8WM-Mn-jdp" customClass="SWTableViewController" customModule="UserLoginandRegistration" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="G5Z-sg-nmH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,19 +271,19 @@
                         <sections>
                             <tableViewSection id="FTB-vk-ucF">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="My Account" rowHeight="254" id="FjI-fw-XrH">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="My Account" rowHeight="254" id="FjI-fw-XrH">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FjI-fw-XrH" id="sUr-L2-bl5">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-2X-52C" customClass="SWRearRKCardView" customModule="UserLoginandRegistration" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
+                                                    <rect key="frame" x="0.0" y="-24" width="320" height="277"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Jon-l9-AFw" kind="custom" identifier="My Account" customClass="SWRevealViewControllerSeguePushController" id="ywx-HN-cEX"/>
+                                            <segue destination="Jon-l9-AFw" kind="custom" identifier="UserCenter" customClass="SWRevealViewControllerSeguePushController" id="ywx-HN-cEX"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Watch List" rowHeight="70" id="5Xr-IQ-CxG">
@@ -391,6 +363,9 @@
                             <outlet property="delegate" destination="8WM-Mn-jdp" id="p8D-zB-irQ"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="cardView" destination="e2Z-2X-52C" id="JCl-hZ-4ed"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bf7-2R-Rsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -452,6 +427,12 @@
                     <view key="view" contentMode="scaleToFill" id="FRp-FS-saE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NBi-r2-tp2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="bhU-Kg-23g">
@@ -510,7 +491,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="Cell" rowHeight="282" id="SH3-VL-1K3" customClass="ListTableViewCell" customModule="UserLoginandRegistration" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="Cell" rowHeight="282" id="SH3-VL-1K3" customClass="ListTableViewCell" customModule="UserLoginandRegistration" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SH3-VL-1K3" id="Sfj-iF-2tN">
                                     <autoresizingMask key="autoresizingMask"/>
