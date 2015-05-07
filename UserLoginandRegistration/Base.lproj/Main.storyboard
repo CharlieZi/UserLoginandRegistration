@@ -482,6 +482,25 @@
             </objects>
             <point key="canvasLocation" x="100" y="779"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="0Xq-0S-U9V">
+            <objects>
+                <viewController id="coY-H0-4yf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VGn-OI-jIE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ldq-Of-d7N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8IV-B8-BEa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gop-Cd-ehd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h7P-KL-sEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-356" y="1465"/>
+        </scene>
         <!--List Table View Controller-->
         <scene sceneID="Qck-hM-by8">
             <objects>
@@ -541,6 +560,7 @@
                                     <outlet property="newsAuthor" destination="YDk-oY-PXH" id="ivB-Jh-1ax"/>
                                     <outlet property="newsContent" destination="T7f-P0-VbW" id="xeG-sI-xHw"/>
                                     <outlet property="newsTimestamp" destination="eQi-MZ-LfO" id="ZwN-1j-BzM"/>
+                                    <segue destination="coY-H0-4yf" kind="push" id="TkN-gM-LBW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
