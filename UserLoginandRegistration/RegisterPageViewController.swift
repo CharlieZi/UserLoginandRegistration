@@ -8,11 +8,21 @@
 
 import UIKit
 
-class RegisterPageViewController: UIViewController {
+
+protocol RegisterDatadelegate{
+    func registerData(LoginData:NSDictionary)
+}
+
+
+
+class RegisterPageViewController: UIViewController{
 
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     
+    
+    
+    var delegate:RegisterDatadelegate? = nil
     
 
     
@@ -45,29 +55,61 @@ class RegisterPageViewController: UIViewController {
             displayMyRegAlertMessage("All fields are required!")
             return
         }
+        // Check Email format
+
+        let mailPattern = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
+        let matcher = RegexHelper(mailPattern)
+        
+        if !matcher.match(usrEmail) {
+            self.displayMyRegAlertMessage("Invalid Email format")
+        }
+        
         
         // Store Data
         
-        NSUserDefaults.standardUserDefaults().setObject(usrEmail, forKey: "usrEmail")
-        NSUserDefaults.standardUserDefaults().setObject(usrPword, forKey: "usrPword")
-        NSUserDefaults.standardUserDefaults().synchronize()
 
-
-
-        // display alert message with confirmation
         
-        var myRegAlert = UIAlertController(title: "Thanks", message: "Registration is complete!", preferredStyle: UIAlertControllerStyle.Alert)
+        let UserData : BmobUser = BmobUser()
+        UserData.setUserName(usrEmail)
+        UserData.setEmail(usrEmail)
+        UserData.setPassword(usrPword)
+        UserData.setObject("dummy.png", forKey: "profileImage")
         
-        let okRegAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){ action in
-            self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+        UserData.signUpInBackgroundWithBlock(){
+            (succeeded, error: NSError!) -> Void in
+            if(succeeded){
+                // 注册成功
+                var myRegAlert = UIAlertController(title: "Thanks", message: "Registration is complete!", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let okRegAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){ action in
+                    
+                    if self.delegate != nil {
+                        let LoginData:NSDictionary = ["email":usrEmail,"password":usrPword]
+                        self.delegate?.registerData(LoginData)
+                    }
+
+                    
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+                
+                myRegAlert.addAction(okRegAction)
+                
+                self.presentViewController(myRegAlert, animated: true, completion: nil)
+                
+            }else{
+                // 注册失败
+                
+                self.displayMyRegAlertMessage("Email Taken!")
+
+                
+                
+            }
+
         }
         
-        myRegAlert.addAction(okRegAction)
-        
-        self.presentViewController(myRegAlert, animated: true, completion: nil)
-
-    
-        
+     
         
     }
     
@@ -82,13 +124,17 @@ class RegisterPageViewController: UIViewController {
         self.presentViewController(myRegAlert, animated: true, completion: nil)
         
     }
+    
+    
+    @IBAction func BacktoLoginBtnClicked(sender: AnyObject) {
+
+
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+    }
 
 }
-
-
-
-
-
 
 
 

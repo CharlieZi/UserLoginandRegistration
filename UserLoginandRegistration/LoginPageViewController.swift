@@ -8,11 +8,18 @@
 
 import UIKit
 
-class LoginPageViewController: UIViewController {
+
+
+
+class LoginPageViewController: UIViewController,RegisterDatadelegate {
 
     @IBOutlet weak var userEmailTextFiled: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     
+    
+    
+    
+    // Life Cycle Start
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,47 +32,93 @@ class LoginPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Life Cycle End
+
+    
+    
+    // Delegate
+    
+    func registerData(LoginData: NSDictionary) {
+        
+        userEmailTextFiled.text = LoginData.objectForKey("email") as! String
+        userPasswordTextField.text = LoginData.objectForKey("password") as! String
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "registerSegue"{
+            let viewController:RegisterPageViewController = segue.destinationViewController as! RegisterPageViewController
+            
+            viewController.delegate = self
+        }
+    
+    }
+
+}
+
+// Buttons
+
+extension LoginPageViewController{
+    
+    @IBAction func LaterBtnClicked(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    
+    }
+    
     @IBAction func LoginBtnClicked(sender: AnyObject) {
         
         let usrEmail = userEmailTextFiled.text
         let usrPword = userPasswordTextField.text
         
-        let usrEmailStored = NSUserDefaults.standardUserDefaults().stringForKey("usrEmail")
-        let usrPwordStored = NSUserDefaults.standardUserDefaults().stringForKey("usrPword")
         
+        // check userData
         
-        
-        
-        if(usrEmail == usrEmailStored){
-            if(usrPword == usrPwordStored){
-                //LoginSuccesful
+        BmobUser.loginWithUsernameInBackground(usrEmail, password:usrPword){
+            (user: BmobUser!, error: NSError!) -> Void in
+            if user != nil {
+              
                 
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isuserLoggedIn")
-                NSUserDefaults.standardUserDefaults().synchronize()
                 
-                self.dismissViewControllerAnimated(true, completion: nil)
+                let viewController:SWRevealViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SWRevealViewController")as! SWRevealViewController
+               
+                self.presentViewController(viewController, animated: true, completion: nil)
+           
+                
+            } else {
+                
+                var myRegAlert = UIAlertController(title: "Alert", message: " Invalid Email or Password", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let okRegAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                
+                myRegAlert.addAction(okRegAction)
+                
+                self.presentViewController(myRegAlert, animated: true, completion: nil)
             }
-        }else{
-            var myRegAlert = UIAlertController(title: "Alert", message: " Invalid Email or Password", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            let okRegAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-            
-            myRegAlert.addAction(okRegAction)
-            
-            self.presentViewController(myRegAlert, animated: true, completion: nil)
-            
         }
-        
-
-        
-        
     }
-
-
     
-    
-    
-    
-    
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
