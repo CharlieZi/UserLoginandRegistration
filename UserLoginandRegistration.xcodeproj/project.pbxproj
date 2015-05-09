@@ -63,8 +63,10 @@
 		CB6368301AE5605F00CA5856 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */; };
 		CB85FD381AF9FED100B67B88 /* BmobProfileImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85FD371AF9FED100B67B88 /* BmobProfileImageHelper.swift */; };
 		CB85FD441AFB393F00B67B88 /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85FD431AFB393F00B67B88 /* SWTableViewController.swift */; };
+		CB85FD461AFB6BBE00B67B88 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85FD451AFB6BBE00B67B88 /* NewsDetailViewController.swift */; };
 		CBCF94D51AF736C3007F4FE8 /* BmobProFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF94D41AF736C3007F4FE8 /* BmobProFileHelper.swift */; };
 		CBCF94D71AF75CB4007F4FE8 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCF94D61AF75CB4007F4FE8 /* Async.swift */; };
+		CBD5EC321AFDC28B00FAAB68 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5EC311AFDC28B00FAAB68 /* ProfileDetailViewController.swift */; };
 		CBD872881AF881870083743A /* BmobCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD872871AF881870083743A /* BmobCoreDataHelper.swift */; };
 		CBD9198C1AF1128900A5C7B3 /* ICETutorialController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD919871AF1128900A5C7B3 /* ICETutorialController.m */; };
 		CBD9198D1AF1128900A5C7B3 /* ICETutorialPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD919891AF1128900A5C7B3 /* ICETutorialPage.m */; };
@@ -155,8 +157,10 @@
 		CB63682F1AE5605F00CA5856 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		CB85FD371AF9FED100B67B88 /* BmobProfileImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmobProfileImageHelper.swift; sourceTree = "<group>"; };
 		CB85FD431AFB393F00B67B88 /* SWTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWTableViewController.swift; sourceTree = "<group>"; };
+		CB85FD451AFB6BBE00B67B88 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		CBCF94D41AF736C3007F4FE8 /* BmobProFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmobProFileHelper.swift; sourceTree = "<group>"; };
 		CBCF94D61AF75CB4007F4FE8 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		CBD5EC311AFDC28B00FAAB68 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		CBD872871AF881870083743A /* BmobCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmobCoreDataHelper.swift; sourceTree = "<group>"; };
 		CBD919861AF1128900A5C7B3 /* ICETutorialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICETutorialController.h; sourceTree = "<group>"; };
 		CBD919871AF1128900A5C7B3 /* ICETutorialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICETutorialController.m; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 				CB3E13071AF33AEE00215919 /* TimelineRKCardView.swift */,
 				CB3056F91AED4094003D1F83 /* ListTableViewCell.swift */,
 				CB3056FA1AED4094003D1F83 /* ListTableViewController.swift */,
+				CB85FD451AFB6BBE00B67B88 /* NewsDetailViewController.swift */,
+				CBD5EC311AFDC28B00FAAB68 /* ProfileDetailViewController.swift */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -358,7 +364,6 @@
 			children = (
 				CB63682E1AE5602A00CA5856 /* Features */,
 				CB2718531AE20F8800EB475F /* QRcodeScaner */,
-				CB53C7001AE1256C006BDC9E /* SlideFrame */,
 			);
 			name = Assembly;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 		CB63682E1AE5602A00CA5856 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CB53C7001AE1256C006BDC9E /* SlideFrame */,
 				CB53C6FE1AE12443006BDC9E /* UserCenter */,
 				CB5149521AF0AE80009C5CBF /* About */,
 				CB5149511AF0AE78009C5CBF /* Compose */,
@@ -589,6 +595,7 @@
 				CBCF94D71AF75CB4007F4FE8 /* Async.swift in Sources */,
 				CB51493B1AEF6FF5009C5CBF /* CVCalendarManager.swift in Sources */,
 				CB5149311AEF6FF5009C5CBF /* CVCalendarView.swift in Sources */,
+				CB85FD461AFB6BBE00B67B88 /* NewsDetailViewController.swift in Sources */,
 				CB5149331AEF6FF5009C5CBF /* CVCalendarMonthView.swift in Sources */,
 				CB27185E1AE2100700EB475F /* QRViewController.swift in Sources */,
 				CB3057031AED42F1003D1F83 /* User.swift in Sources */,
@@ -596,6 +603,7 @@
 				CB2362451AE5F66B004CB54C /* AboutUsViewController.swift in Sources */,
 				CB5149351AEF6FF5009C5CBF /* CVCalendarDayView.swift in Sources */,
 				CB5149571AF0C4EB009C5CBF /* SWRevealViewController.m in Sources */,
+				CBD5EC321AFDC28B00FAAB68 /* ProfileDetailViewController.swift in Sources */,
 				CBD9198E1AF1128900A5C7B3 /* ICETutorialStyle.m in Sources */,
 				CB5149321AEF6FF5009C5CBF /* CVCalendarMenuView.swift in Sources */,
 				CB5149401AEF6FF5009C5CBF /* CVCalendarViewAnimatorDelegate.swift in Sources */,

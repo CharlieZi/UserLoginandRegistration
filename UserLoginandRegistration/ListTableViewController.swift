@@ -11,6 +11,9 @@ import UIKit
 
 
 
+
+
+
 class ListTableViewController: UITableViewController {
     
     
@@ -20,12 +23,16 @@ class ListTableViewController: UITableViewController {
     var NewsTimelineData:NSMutableArray = NSMutableArray()
     var lastsyncStamp:NSDate = NSDate()
     
+    
+    
+    
     // life cycle start
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.loadData()
-
+        
+        
     }
     
     override func viewDidLoad() {
@@ -41,10 +48,7 @@ class ListTableViewController: UITableViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         
-        
-        
-        
-        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
     }
     
@@ -74,6 +78,7 @@ class ListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell:ListTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ListTableViewCell
 
         //---Configure the cell
@@ -83,6 +88,8 @@ class ListTableViewController: UITableViewController {
         cell.newsTimestamp.alpha = 0
         cell.newsContent.alpha = 0
         cell.CellUIView.alpha = 0
+        
+        
         //---date operation
         var dateFormattor:NSDateFormatter = NSDateFormatter()
         dateFormattor.dateFormat = "yyyy-MM-dd hh:mm:ss"
@@ -124,7 +131,6 @@ class ListTableViewController: UITableViewController {
             cell.newsTimestamp.alpha = 1
             cell.newsContent.alpha = 1
             cell.CellUIView.alpha = 1
-
             })
         
         //---like func
@@ -139,20 +145,27 @@ class ListTableViewController: UITableViewController {
         
         //---fin
         
+        let tapGestureProfile:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "profilePhotoTap:")as UITapGestureRecognizer
+        tapGestureProfile.view?.tag = indexPath.row
+        
+        cell.cardView.profileImageView.addGestureRecognizer(tapGestureProfile)
+
+        
+        
+        
+     
+        
         return cell
         
         
     }
-    
-    
-    
     
 
 }
 
 
 
-extension ListTableViewController{
+extension ListTableViewController {
     
     // buttons
     
@@ -177,8 +190,7 @@ extension ListTableViewController{
     
 }  // buttons
 
-
-extension ListTableViewController{
+extension ListTableViewController {
     
     // functions
     
@@ -362,9 +374,69 @@ extension ListTableViewController{
     
 }  // functions
 
+extension ListTableViewController {
+    
+    func profilePhotoTap(sender:UIGestureRecognizer) {
+        
+        let touchLoactoin:CGPoint = sender.locationInView(self.tableView)
+        
+        let indexPath:NSIndexPath = self.tableView.indexPathForRowAtPoint(touchLoactoin)!
+        
+        let scrollPosition:UITableViewScrollPosition = UITableViewScrollPosition.None
+        
+        self.tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: scrollPosition)
+        
+        self.performSegueWithIdentifier("profileDetail", sender: UITableViewCell())
+        
+    }
+    
+}  // rkcradview delegate
 
+extension ListTableViewController {
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("newsDetail", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "newsDetail" {
+            
+            let comingupViewController: NewsDetailViewController = segue.destinationViewController as! NewsDetailViewController
+            
+            let indexPath:NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            
+            let itemDict:NSDictionary = NewsTimelineData.objectAtIndex(indexPath.row) as! NSDictionary
+            
+            comingupViewController.identifier = itemDict.objectForKey("identifier") as! String
+            
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+        }
+        
+        if segue.identifier == "profileDetail" {
+            
+            let comingupViewController: ProfileDetailViewController = segue.destinationViewController as! ProfileDetailViewController
+            
+            let indexPath:NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            
+            let itemDict:NSDictionary = NewsTimelineData.objectAtIndex(indexPath.row) as! NSDictionary
 
-
+            comingupViewController.identifier = itemDict.objectForKey("identifier") as! String
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+}  //
 
 
 

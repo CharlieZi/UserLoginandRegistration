@@ -135,6 +135,9 @@ class BmobProfileImageHelper {
         
     }
     
+
+    
+    
     
     class func userDidExist()->Bool{
         

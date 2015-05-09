@@ -13,7 +13,7 @@ import UIKit
 protocol TimelineRKCardViewDelegate{
     func titleLabelTap()
     func coverPhotoTap()
-    func profilePhotoTap(test:NSString)
+    func profilePhotoTap(sender:UIGestureRecognizer)
 }
 
 
@@ -100,19 +100,11 @@ class TimelineRKCardView: UIView {
         
         
         visualEffectView.frame = cp_mask.frame
-//        visualEffectView.alpha = 0
-        
-        
+
         profileImageView.frame = CGRectMake(0, 0, pp_mask.frame.size.width, pp_mask.frame.size.height)
-        
-        
-        
-        
         
         coverImageView.frame = cp_mask.frame
         coverImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        
-        
         
         cp_mask.addSubview(coverImageView)
         pp_mask.addSubview(profileImageView)
@@ -125,8 +117,6 @@ class TimelineRKCardView: UIView {
         
         let titleLabelX:CGFloat = pp_circle.frame.origin.x + pp_circle.frame.size.width
 
-        
-        
         titleLabel = UILabel(frame: CGRectMake(titleLabelX, cp_mask.frame.size.height + 7, self.frame.size.width - titleLabelX, 26))
         titleLabel.adjustsFontSizeToFitWidth = false
         titleLabel.lineBreakMode = NSLineBreakMode.ByClipping
@@ -134,27 +124,22 @@ class TimelineRKCardView: UIView {
         titleLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
         titleLabel.text = "Title Label"
         
-        
-        
-    // Register touch events on the label
-        
+        // Register touch events on the label
         
         titleLabel.userInteractionEnabled = true
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "titleLabelTap")as UITapGestureRecognizer
         titleLabel.addGestureRecognizer(tapGesture)
 
-
-     // Register touch events on the cover image
+        // Register touch events on the cover image
         
         coverImageView.userInteractionEnabled = true
         let tapGestureCover:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "coverPhotoTap")as UITapGestureRecognizer
         coverImageView.addGestureRecognizer(tapGestureCover)
         
-        
-    // Register touch events on the profile imate
+        // Register touch events on the profile imate
         
         profileImageView.userInteractionEnabled = true
-        let tapGestureProfile:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "profilePhotoTap")as UITapGestureRecognizer
+        let tapGestureProfile:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "profilePhotoTap:")as UITapGestureRecognizer
         profileImageView.addGestureRecognizer(tapGestureProfile)
         
     // building upp the views
@@ -170,9 +155,6 @@ class TimelineRKCardView: UIView {
     
     
     
-    
-    
-    
 }
 extension TimelineRKCardView{
     
@@ -182,7 +164,6 @@ extension TimelineRKCardView{
         {
             self.delegate!.titleLabelTap()
  
-        }else{
         }
     }
     
@@ -190,16 +171,14 @@ extension TimelineRKCardView{
         if delegate != nil
         {
             self.delegate!.coverPhotoTap()
-        }else{
             
         }
     }
     
-    func profilePhotoTap() -> Void{
+    func profilePhotoTap(sender:UIGestureRecognizer) -> Void{
         if (delegate != nil)
         {
-            self.delegate!.profilePhotoTap("test")
-        }else{
+            self.delegate!.profilePhotoTap(sender)
             
         }
     }
